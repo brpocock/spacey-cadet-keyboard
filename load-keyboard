@@ -1,0 +1,14 @@
+#!/bin/sh
+sudo loadkeys spacey < /dev/tty1
+MYKEYS=( xinput list | \
+    grep 'USB Key' | \
+    cut -d= -f2 | \
+    cut -f1 | \
+    while read devid
+    do 
+        xinput list-props $devid | \
+            grep -q '1241, 361' && \
+            echo $devid
+    done ) | head -n 1
+setxkbmap $(MYKEYS) spacey
+

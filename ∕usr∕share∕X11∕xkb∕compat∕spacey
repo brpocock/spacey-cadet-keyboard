@@ -1,0 +1,29 @@
+// Spacey Cadet keyboard layout
+// Offered into the Public Domain by Bruce-Robert Pocock <brpocock@star-hope.org>
+// CC-0 license.
+
+/// This is /usr/share/X11/xkb/compat/spacey
+
+xkb_compatibility "spacey" {
+     include "complete";
+
+     virtual_modifiers Shift,Control,Meta,Super,Hyper,AltGr,Lock;
+
+     interpret Shift_L { action = SetMods(modifiers=Shift); };
+     interpret Shift_R { action = SetMods(modifiers=Shift); };
+
+     interpret Control_L { action = SetMods(modifiers=Control); };
+     interpret Control_R { action = SetMods(modifiers=Control); };
+
+     interpret Meta_L { action = SetMods(modifiers=Mod1+Meta); };
+     interpret Meta_R { action = SetMods(modifiers=Mod1+Meta); };
+
+     interpret Super_L { action = SetMods(modifiers=Mod3); };
+
+     interpret Hyper_R { action = SetMods(modifiers=Mod4); };
+
+     interpret ISO_Level3_Shift { action = SetMods(modifiers=AltGr); };
+
+     interpret ISO_Level5_Shift { action = LatchGroup(group=2); };
+
+};
