@@ -5122,28 +5122,28 @@
 <Multi_key> <U1D1BC> <U1D16F> 	: "𝆺𝅥𝅯"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
 
 # BRP: Musical nodes by way of ♪ (U266a) key
-<Multi_key> <U2669> <4>         : "♩" U2669 # Quarter note
-<Multi_key> <U2669> <8>         : "♫" U266b # Two eigth notes
-<Multi_key> <U2669> <1>         : "♬" U266c # Two sixteenth notes
-<Multi_key> <U2669> <minus>     : "♭" U266d # Flat sign
-<Multi_key> <u2669> <0>         : "♮" U266e # Natural sign
-<Multi_key> <u2669> <plus>      :"♯" U266f # Sharp sign
-<Multi_key> <1> <u2669> 	: "𝅗𝅥"   U1D15E # MUSICAL SYMBOL HALF NOTE
-<Multi_key> <2> <u2669> 	: "𝅘𝅥"   U1D15F # MUSICAL SYMBOL QUARTER NOTE
-<Multi_key> <3> <u2669> 	: "𝅘𝅥𝅮"   U1D160 # MUSICAL SYMBOL EIGHTH NOTE
-<Multi_key> <4> <u2669> 	: "𝅘𝅥𝅯"   U1D161 # MUSICAL SYMBOL SIXTEENTH NOTE
-<Multi_key> <5> <u2669> 	: "𝅘𝅥𝅰"   U1D162 # MUSICAL SYMBOL THIRTY-SECOND NOTE
-<Multi_key> <6> <u2669> 	: "𝅘𝅥𝅱"   U1D163 # MUSICAL SYMBOL SIXTY-FOURTH NOTE
-<Multi_key> <7> <u2669> 	: "𝅘𝅥𝅲"   U1D164 # MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH NOTE
-<Multi_key> <apostrophe> <u2669>	: "𝆹𝅥"   U1D1BB # MUSICAL SYMBOL MINIMA
-<Multi_key> <comma> <u2669> 	: "𝆺𝅥"   U1D1BC # MUSICAL SYMBOL MINIMA BLACK
-<Multi_key> <period> <u2669> 	: "𝆹𝅥𝅮"   U1D1BD # MUSICAL SYMBOL SEMIMINIMA WHITE
+<Multi_key> <U266a> <4>         : "♩" U2669 # Quarter note
+<Multi_key> <U266a> <8>         : "♫" U266b # Two eigth notes
+<Multi_key> <U266a> <1>         : "♬" U266c # Two sixteenth notes
+<Multi_key> <U266a> <minus>     : "♭" U266d # Flat sign
+<Multi_key> <U266a> <0>         : "♮" U266e # Natural sign
+<Multi_key> <U266a> <plus>      :"♯" U266f # Sharp sign
+<Multi_key> <1> <U266a> 	: "𝅗𝅥"   U1D15E # MUSICAL SYMBOL HALF NOTE
+<Multi_key> <2> <U266a> 	: "𝅘𝅥"   U1D15F # MUSICAL SYMBOL QUARTER NOTE
+<Multi_key> <3> <U266a> 	: "𝅘𝅥𝅮"   U1D160 # MUSICAL SYMBOL EIGHTH NOTE
+<Multi_key> <4> <U266a> 	: "𝅘𝅥𝅯"   U1D161 # MUSICAL SYMBOL SIXTEENTH NOTE
+<Multi_key> <5> <U266a> 	: "𝅘𝅥𝅰"   U1D162 # MUSICAL SYMBOL THIRTY-SECOND NOTE
+<Multi_key> <6> <U266a> 	: "𝅘𝅥𝅱"   U1D163 # MUSICAL SYMBOL SIXTY-FOURTH NOTE
+<Multi_key> <7> <U266a> 	: "𝅘𝅥𝅲"   U1D164 # MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH NOTE
+<Multi_key> <apostrophe> <U266a>	: "𝆹𝅥"   U1D1BB # MUSICAL SYMBOL MINIMA
+<Multi_key> <comma> <U266a> 	: "𝆺𝅥"   U1D1BC # MUSICAL SYMBOL MINIMA BLACK
+<Multi_key> <period> <U266a> 	: "𝆹𝅥𝅮"   U1D1BD # MUSICAL SYMBOL SEMIMINIMA WHITE
 
-<Multi_key> <p> <u2669> 	: "𝆺𝅥𝅮"   U1D1BE # MUSICAL SYMBOL SEMIMINIMA BLACK
+<Multi_key> <p> <U266a> 	: "𝆺𝅥𝅮"   U1D1BE # MUSICAL SYMBOL SEMIMINIMA BLACK
 
-<Multi_key> <y> <u2669> 	: "𝆹𝅥𝅯"   U1D1BF # MUSICAL SYMBOL FUSA WHITE
+<Multi_key> <y> <U266a> 	: "𝆹𝅥𝅯"   U1D1BF # MUSICAL SYMBOL FUSA WHITE
 
-<Multi_key> <f> <u2669> 	: "𝆺𝅥𝅯"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
+<Multi_key> <f> <U266a> 	: "𝆺𝅥𝅯"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
 
 #
 # Khmer digraphs

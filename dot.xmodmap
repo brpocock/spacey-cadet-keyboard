@@ -1,0 +1,261 @@
+! BRFP Space Cadet style layouts
+
+clear Shift
+clear Lock
+clear Control
+clear Mod1
+clear Mod2
+clear Mod3
+clear Mod4
+clear Mod5
+
+
+! First, let's just alter the modifier and AID keys, without changing
+! any of the typewriter keys' layouts.
+
+! Tab on Delete key
+keycode 22 = Tab ISO_Left_Tab
+
+! Pause/Break key where Tab would usually go
+! FIXME? I want Control+Pause = Break
+keycode  23 = XF86Stop Pause XF86Stop Pause Break
+
+! Left Control key doesn't move
+keycode  37 = Control_L
+
+keycode  62 = Shift_R 
+keycode  64 = Meta_L 
+
+! Backspace on “Caps Lock”
+keycode  66 = BackSpace
+
+! Help key on PF1
+keycode  67 = Help Help F1 F13 Help F1 XF86Switch_VT_1 F1 F1 XF86Switch_VT_1 F1 F1 F1 F1 XF86Switch_VT_1
+! Properties key on PF2
+keycode  68 = SunProps XF86Option F2 F14 F2 XF86Switch_VT_2 F2 F2 F2 F2 XF86Switch_VT_2
+! Back key on PF3
+keycode  69 = XF86Back SunUndo F3 F15 XF86Back F3 XF86Switch_VT_3 F3 F3 XF86Switch_VT_3 F3 F3 F3 F3 XF86Switch_VT_3
+! History key on PF4
+keycode  70 = XF86History SunPaste F4 F16 XF86History F4 XF86Switch_VT_4 F4 F4 XF86Switch_VT_4 F4 F4 F4 F4 XF86Switch_VT_4
+! Build key on PF5
+keycode  71 = XF86New SunCut  F5 F17 XF86New F5 XF86Switch_VT_5 F5 F5 XF86Switch_VT_5 F5 F5 F5 F5 XF86Switch_VT_5
+
+! View key on PF6
+keycode  72 = XF86View SunCopy F6 F18 XF86View F6 XF86Switch_VT_6 F6 F6 XF86Switch_VT_6 F6 F6 F6 F6 XF86Switch_VT_6
+! Execute key on PF7
+keycode  73 = Execute XF86LightBulb F7 F19 Execute F7 XF86Switch_VT_7 F7 F7 XF86Switch_VT_7 F7 F7 F7 F7 XF86Switch_VT_7
+! REPL key on PF8
+keycode  74 = XF86Send XF86Tools F8 F20 F8 F8 XF86Switch_VT_8 F8 F8 XF86Switch_VT_9 F8 F8 F8 F8 XF86Switch_VT_8
+! Print key on PF9
+keycode  75 = Print Print F9 F21 Print F9 XF86Switch_VT_9 F9 F9 XF86Switch_VT_9 F9 F9 F9 F9 XF86Switch_VT_9
+! Menu key on PF10
+keycode  76 = Menu XF86MenuKB F10 F22 F10 F10 XF86Switch_VT_10 F10 F10 XF86Switch_VT_10 F10 F10 F10 F10 XF86Switch_VT_10
+! --- also could use: XF86MenuPB osfMenu osfMenuBar
+! Zoom key on PF11
+keycode  95 = XF86ZoomIn XF86ZoomOut F11 F23 F11 F11 XF86Switch_VT_11 F11 F11 XF86Switch_VT_11 F11 F11 F11 F11 XF86Switch_VT_11
+! Secure key on PF12
+keycode  96 = XF86ScreenSaver XF86Away F12 F24 F12 F12 XF86Switch_VT_12 F12 F12 XF86Switch_VT_12 F12 F12 F12 F12 XF86Switch_VT_12
+! Control+96 = XF86LogOff?
+
+
+! Media play/pause on Print Screen/Sys Req key
+keycode 107 = XF86AudioPlay XF86AudioPause
+! += Control/Meta = XF86AudioPrev XF86AudioNext
+
+! System Request key on Scroll Lock
+keycode  78 = Sys_Req Sys_Req Sys_Req Sys_Req NoSymbol NoSymbol Terminate_Server NoSymbol NoSymbol Terminate_Server Sys_Req Sys_Req NoSymbol NoSymbol Terminate_Server
+
+! Mute key on Pause/Break
+keycode 122 = XF86AudioMute XF86AudioMute XF86AudioLowerVolume XF86AudioLowerVolume XF86AudioRaiseVolume XF86AudioRaiseVolume
+keycode 127 = XF86AudioMute XF86AudioMute XF86AudioLowerVolume XF86AudioLowerVolume XF86AudioRaiseVolume XF86AudioRaiseVolume
+! XF86AudioLowerVolume XF86AudioRaiseVolume
+
+
+! AltGr key
+keycode 133 = Mode_switch
+
+
+! Delete on the lower-right corner Control key
+keycode 105 = Delete
+
+! Right Meta key doesn't move
+keycode 108 = Meta_R
+! Non-existent key?
+keycode 109 = Linefeed
+
+! Home on key labeled Insert
+keycode 118 = Home 
+! End on key labeled Home
+keycode 110 = End 
+
+! Prior on PageUp
+keycode 112 = Prior 
+! Next on PageDown
+keycode 117 = Next 
+
+! Hyper on Delete key
+keycode 119 =  Hyper_R
+! Insert on End key
+keycode 115 = Insert
+
+! Up on T-pad
+keycode 111 = Up
+! Left on T-pad
+keycode 113 = Left
+! Right on T-pad
+keycode 114 = Right
+! Down on T-pad
+keycode 116 = Down 
+
+! Compose on right win-key
+keycode 134 = Multi_key
+keycode  92 = Multi_key
+! Any key
+keycode 94 = ISO_Level5_Shift
+
+! Control on ‘menu’ key
+keycode 135 = Control_R 
+
+! Left shift doesn't move
+keycode  50 = Shift_L 
+!Caps_Lock 
+
+! Any key
+keycode 94 = ISO_Level5_Shift
+
+! OK, let's pretend we might not want to Dvorak things, but we do like
+!redefining punctuation a little bit. Here's the compromise.
+
+keycode  36 = Return
+
+
+! Super key where Escape would usually go
+keycode   9 = Super_L
+
+! Escape on top-left key `~
+keycode  49 = Escape
+
+
+! Top row (after Escape)
+
+
+! 1 ! ☠ ☿
+keycode  10 = 1 exclam     U2620      U263f
+! 2 | ∈ ♀
+keycode  11 = 2 bar        elementof  femalesymbol
+! 3 # ∋ ⊕
+keycode  12 = 3 numbersign containsas U2295
+! 4 $ ✗ ♂
+keycode  13 = 4 dollar     U2717      malesymbol
+! 5 % ♪ ♃
+keycode  14 = 5 percent    U266a      U2643
+! 6 _ † ♄
+keycode  15 = 6 underscore dagger     U2644
+! 7 & ∀ ♅
+keycode  16 = 7 ampersand  U2200      U2645
+! 8 ? □ ♆
+keycode  17 = 8 question   U25a1      U2646
+! 9 { ƒ ☽
+keycode  18 = 9 braceleft  function   U263d
+! 0 } ∞ ☉
+keycode  19 = 0 braceright infinity   U2609
+keycode  34 = parenleft  bracketleft
+keycode  35 = parenright bracketright
+
+
+
+keycode  48 = apostrophe quotedbl grave  notsign
+keycode  59 = comma      less     comma  guillemotleft
+keycode  60 = period     greater  period guillemotright
+
+keycode  61 = slash backslash squareroot checkmark
+! + = ✝ ≈
+keycode  21 = plus equal U271d U2248
+! - ~ — ^
+keycode  20 = minus asciitilde emdash asciicircum U00ad plusminus
+! * @ ⁂ ★
+keycode  51 = asterisk at U2042 U2605
+
+! Clear key on Num Lock
+keycode  77 = Clear KP_Delete U2422 U2423
+
+! / ÷ λ ⁄ (fraction)
+keycode 106 = KP_Divide U00f7 U03BB U2215 U2044 VoidSymbol XF86Ungrab 0x10000f7 VoidSymbol XF86Ungrab KP_Divide U2215 0x10000f7 VoidSymbol XF86Ungrab
+! * × ° ⋅
+keycode  63 = KP_Multiply U00d7 U00b0 U22C5 0x10000d7 VoidSymbol XF86ClearGrab 0x10000d7 VoidSymbol XF86ClearGrab KP_Multiply U22C5 0x10000d7 VoidSymbol XF86ClearGrab
+
+keycode  79 = KP_7 KP_7 U2196 U21D6
+keycode  80 = KP_8 KP_8  U2191  U21D1 
+keycode  81 = KP_9  KP_9  U2197  U21D7
+! - ¯ (macron) ‐ (hyphen) – (en dash)
+keycode  82 = KP_Subtract U00af U2010 endash VoidSymbol XF86Prev_VMode U2212 VoidSymbol XF86Prev_VMode KP_Subtract U2212 U2212 VoidSymbol XF86Prev_VMode
+
+keycode  83 = KP_4 KP_4  U2190  U21D0 
+keycode  84 = KP_5  KP_5  U2194  U21D4
+keycode  85 = KP_6  KP_6  U2192  U21D2
+! + = ℵ •
+keycode  86 = KP_Add KP_Equal U2135 U2022 0x100002b VoidSymbol XF86Next_VMode 0x100002b VoidSymbol XF86Next_VMode KP_Add 0x100002b 0x100002b VoidSymbol XF86Next_VMode
+
+keycode  87 = KP_1 KP_1  U2199  U21D9
+keycode  88 = KP_2  KP_2  U2193  U21D3
+keycode  89 = KP_3 KP_3  U2198  U21D8 
+keycode 104 = KP_Enter
+
+! also "00" "000" ??
+keycode  90 = KP_0 KP_0  U2195  U21D5
+keycode  91 = KP_Decimal KP_Separator KP_Decimal KP_Separator
+
+
+
+
+! + = ✝ ≈
+keycode  24 = q Q q Q U03b8 U0398
+keycode  25 = w W w W U03c9 U03a9
+keycode  26 = e E U2026 U20ac U03b5 U0395
+keycode  27 = r R trademark registered U03c1 U03a1
+keycode  28 = t T thorn THORN U03c4 U03a4 
+keycode  29 = y Y U00a5 U262f U214c U2125
+keycode  30 = u U u U U03c5 U03a5
+keycode  31 = i I i I U03b9 U0399
+keycode  32 = o O o O U03bf U039f
+keycode  33 = p P p U00b6 U03c0 U03a0
+
+keycode  21 = plus equal U271d U2248 U00b1 U2260
+
+keycode  38 = a A a A U03b1 U0391
+keycode  39 = s S U00a7 U03a3 U03c3 U03a3
+keycode  40 = d D eth ETH U03b4 U0394
+keycode  41 = f F f F U03c6 U03a6
+keycode  42 = g G U00bf G U00bf G U03b3 U0393
+keycode  43 = h H h H U03b7 U0397
+keycode  44 = j J j J U03c8 U03a8
+keycode  45 = k K k K U03ba U039a
+keycode  46 = l L U00a1 U00a3 U03bb U039b
+
+keycode  47 = semicolon colon therefore because
+keycode  48 = apostrophe quotedbl grave notsign
+
+keycode  52 = z Z z Z U03b6 U03a6
+keycode  53 = x X x X U03be U039e
+keycode  54 = c C cent copyright U03c7 U03a7
+keycode  55 = v V v V U03c2 U09a2
+keycode  56 = b B b B U03b2 U0392
+keycode  57 = n N thorn THORN U03bd U039d
+keycode  58 = m M m M U03bc U039c
+
+keycode  59 = comma less comma guillemotleft
+keycode  60 = period greater period guillemotright
+keycode  61 = slash backslash squareroot checkmark
+
+
+keycode  65 = space
+
+
+add shift = Shift_L Shift_R
+add control = Control_L Control_R
+add mod1 = Meta_L Meta_R Alt_L Alt_R
+add mod2 = ISO_Level3_Shift Mode_switch
+add mod3 = Hyper_R
+add mod4 = Super_L
+add mod5 = ISO_Level5_Shift
+
