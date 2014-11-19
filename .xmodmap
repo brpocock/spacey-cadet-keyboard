@@ -1,0 +1,397 @@
+! BRFP Space Cadet style layouts
+
+clear Shift
+clear Lock
+clear Control
+clear Mod1
+clear Mod2
+clear Mod3
+clear Mod4
+clear Mod5
+
+
+! First, let's just alter the modifier and AID keys, without changing
+! any of the typewriter keys' layouts.
+
+! Tab on Delete key
+keycode 22 = Tab ISO_Left_Tab
+
+! Pause/Break key where Tab would usually go
+! FIXME? I want Control+Pause = Break
+keycode  23 = XF86Stop Pause XF86Stop Pause Break
+
+! Left Control key doesn't move
+keycode  37 = Control_L
+
+keycode  62 = Shift_R 
+keycode  64 = Meta_L 
+
+! Backspace on “Caps Lock”
+keycode  66 = BackSpace
+
+! Help key on PF1
+keycode  67 = Help F1 Help F1 Help F1 XF86Switch_VT_1 F1 F1 XF86Switch_VT_1 F1 F1 F1 F1 XF86Switch_VT_1
+! Properties key on PF2
+keycode  68 = SunProps F2 XF86Switch_VT_2 F2 F2 XF86Switch_VT_2 F2 F2 F2 F2 XF86Switch_VT_2
+! Back key on PF3
+keycode  69 = XF86Back SunUndo Cancel F3 Cancel F3 XF86Switch_VT_3 F3 F3 XF86Switch_VT_3 F3 F3 F3 F3 XF86Switch_VT_3
+! History key on PF4
+keycode  70 = XF86History SunPaste XF86History F4 XF86History F4 XF86Switch_VT_4 F4 F4 XF86Switch_VT_4 F4 F4 F4 F4 XF86Switch_VT_4
+! Build key on PF5
+!!!! keycode  71 = XF86New SunCut  XF86New F5 XF86New F5 XF86Switch_VT_5 F5 F5 XF86Switch_VT_5 F5 F5 F5 F5 XF86Switch_VT_5
+
+!!!! keycode 71 = a A b B c C d D e E f F g G h H
+
+! View key on PF6
+keycode  72 = XF86View SunCopy XF86View F6 XF86View F6 XF86Switch_VT_6 F6 F6 XF86Switch_VT_6 F6 F6 F6 F6 XF86Switch_VT_6
+! Execute key on PF7
+keycode  73 = Execute XF86Send Execute F7 Execute F7 XF86Switch_VT_7 F7 F7 XF86Switch_VT_7 F7 F7 F7 F7 XF86Switch_VT_7
+! REPL key on PF8
+keycode  74 = F8 F8 F8 F8 F8 F8 XF86Switch_VT_8 F8 F8 XF86Switch_VT_9 F8 F8 F8 F8 XF86Switch_VT_8
+! Print key on PF9
+keycode  75 = Print F9 Print F9 Print F9 XF86Switch_VT_9 F9 F9 XF86Switch_VT_9 F9 F9 F9 F9 XF86Switch_VT_9
+! Menu key on PF10
+keycode  76 = Menu XF86MenuKB F10 F10 F10 F10 XF86Switch_VT_10 F10 F10 XF86Switch_VT_10 F10 F10 F10 F10 XF86Switch_VT_10
+! --- also could use: XF86MenuPB osfMenu osfMenuBar
+! Zoom key on PF11
+keycode  95 = XF86ZoomIn XF86ZoomOut F11 F11 F11 F11 XF86Switch_VT_11 F11 F11 XF86Switch_VT_11 F11 F11 F11 F11 XF86Switch_VT_11
+! Secure key on PF12
+keycode  96 = XF86ScreenSaver XF86Away F12 F12 F12 F12 XF86Switch_VT_12 F12 F12 XF86Switch_VT_12 F12 F12 F12 F12 XF86Switch_VT_12
+! Control+96 = XF86LogOff?
+
+
+! Media play/pause on Print Screen/Sys Req key
+keycode 107 = XF86AudioPlay XF86AudioPause
+! += Control/Meta = XF86AudioPrev XF86AudioNext
+
+! System Request key on Scroll Lock
+keycode  78 = Sys_Req Sys_Req Sys_Req Sys_Req NoSymbol NoSymbol Terminate_Server NoSymbol NoSymbol Terminate_Server Sys_Req Sys_Req NoSymbol NoSymbol Terminate_Server
+
+! Mute key on Pause/Break
+keycode 122 = XF86AudioMute 
+keycode 127 = XF86AudioMute 
+! XF86AudioLowerVolume XF86AudioRaiseVolume
+
+
+! AltGr key
+keycode 133 = Mode_switch
+
+
+! Delete on the lower-right corner Control key
+keycode 105 = Delete
+
+! Right Meta key doesn't move
+keycode 108 = Meta_R
+! Non-existent key?
+keycode 109 = Linefeed
+
+! Home on key labeled Insert
+keycode 118 = Home 
+! End on key labeled Home
+keycode 110 = End 
+
+! Prior on PageUp
+keycode 112 = Prior 
+! Next on PageDown
+keycode 117 = Next 
+
+! Hyper on Delete key
+keycode 119 =  Hyper_R
+! Insert on End key
+keycode 115 = Insert
+
+! Up on T-pad
+keycode 111 = Up
+! Left on T-pad
+keycode 113 = Left
+! Right on T-pad
+keycode 114 = Right
+! Down on T-pad
+keycode 116 = Down 
+
+! Compose on right win-key
+keycode 134 = Multi_key
+keycode  92 = Multi_key
+
+! Control on ‘menu’ key
+keycode 135 = Control_R 
+
+! Left shift doesn't move
+keycode  50 = Shift_L 
+
+! Any key
+keycode 94 = ISO_Level5_Shift
+
+! OK, let's pretend we might not want to Dvorak things, but we do like
+!redefining punctuation a little bit. Here's the compromise.
+
+keycode  36 = Return
+
+
+! Super key where Escape would usually go
+keycode   9 = Super_L
+
+! Escape on top-left key `~
+keycode  49 = Escape
+
+
+! Top row (after Escape)
+
+
+! 1 ! ☠ ☿
+keycode  10 = 1 exclam     U2620      U263f
+! 2 | ∈ ♀
+keycode  11 = 2 bar        elementof  femalesymbol
+! 3 # ∋ ⊕
+keycode  12 = 3 numbersign containsas U2295
+! 4 $ ✗ ♂
+keycode  13 = 4 dollar     U2717      malesymbol
+! 5 % ♪ ♃
+keycode  14 = 5 percent    U266a      U2643
+! 6 _ † ♄
+keycode  15 = 6 underscore dagger     U2644
+! 7 & ∀ ♅
+keycode  16 = 7 ampersand  U2200      U2645
+! 8 ? □ ♆
+keycode  17 = 8 question   U25a1      U2646
+! 9 { ƒ ☽
+keycode  18 = 9 braceleft  function   U263d
+! 0 } ∞ ☉
+keycode  19 = 0 braceright infinity   U2609
+keycode  34 = parenleft  bracketleft
+keycode  35 = parenright bracketright
+
+
+
+keycode  48 = apostrophe quotedbl grave  notsign
+keycode  59 = comma      less     comma  guillemotleft
+keycode  60 = period     greater  period guillemotright
+
+keycode  61 = slash backslash squareroot checkmark
+! + = ✝ ≈
+keycode  21 = plus equal U271d U2248
+! - ~ — ^
+keycode  20 = minus asciitilde emdash asciicircum 
+! * @ ⁂ ★
+keycode  51 = asterisk at U2042 U2605
+
+! Clear key on Num Lock
+keycode  77 = Clear KP_Delete U2422 U2423
+
+! / ÷ λ ⁄ (fraction)
+keycode 106 = KP_Divide U00f7 U03BB U2215 U2044 VoidSymbol XF86Ungrab 0x10000f7 VoidSymbol XF86Ungrab KP_Divide U2215 0x10000f7 VoidSymbol XF86Ungrab
+! * × ° ⋅
+keycode  63 = KP_Multiply U00d7 U00b0 U22C5 0x10000d7 VoidSymbol XF86ClearGrab 0x10000d7 VoidSymbol XF86ClearGrab KP_Multiply U22C5 0x10000d7 VoidSymbol XF86ClearGrab
+
+keycode  79 = KP_7
+keycode  80 = KP_8
+keycode  81 = KP_9
+! - ¯ (macron) ‐ (hyphen) – (en dash)
+keycode  82 = KP_Subtract U00af U2010 endash VoidSymbol XF86Prev_VMode U2212 VoidSymbol XF86Prev_VMode KP_Subtract U2212 U2212 VoidSymbol XF86Prev_VMode
+
+keycode  83 = KP_4
+keycode  84 = KP_5
+keycode  85 = KP_6
+! + = ℵ •
+keycode  86 = KP_Add KP_Equal U2135 U2022 0x100002b VoidSymbol XF86Next_VMode 0x100002b VoidSymbol XF86Next_VMode KP_Add 0x100002b 0x100002b VoidSymbol XF86Next_VMode
+
+keycode  87 = KP_1
+keycode  88 = KP_2
+keycode  89 = KP_3
+keycode 104 = KP_Enter
+
+! also "00" "000" ??
+keycode  90 = KP_0 
+keycode  91 = KP_Decimal KP_Separator KP_Decimal KP_Separator
+
+
+
+
+!!- ! And, here's the full Dvorak-style layout.
+
+!!- ! Numbers don't change from the Qwerty above, but:
+!!- keycode  20 = parenleft bracketleft
+!!- keycode  21 = parenright bracketright
+
+
+!!- keycode  24 = apostrophe quotedbl grave notsign
+!!- keycode  25 = comma less comma guillemotleft
+!!- keycode  26 = period greater period guillemotright
+!!- keycode  27 = p P p U00b6 	U03c0 U03a0
+!!- keycode  28 = y Y U00a5 U262f 	U214c U2125
+!!- keycode  29 = f F f F 		U03c6 U03a6
+!!- keycode  30 = g G g G U00bf G 	U03b3 U0393
+!!- keycode  31 = c C cent copyright U03c7 U03a7
+!!- keycode  32 = r R trademark registered U03c1 U03a1
+!!- keycode  33 = l L U00a1 U00a3 	U03bb U039b
+!!- keycode  34 = slash backslash 	squareroot checkmark
+!!- ! + = ✝ ≈
+!!- keycode  35 = plus equal U271d U2248 	U00b1 U2260
+
+
+!!- keycode  38 = a A a A 	U03b1 U0391
+!!- keycode  39 = o O o O 	U03bf U039f
+!!- keycode  40 = e E U2026 U20ac 	U03b5 U0395
+!!- keycode  41 = u U u U 	U03c5 U03a5
+!!- keycode  42 = i I i I 	U03b9 U0399
+!!- keycode  43 = d D U00f0 U00d0 	U03b4 U0394
+!!- keycode  44 = h H h H 	U03b7 U0397
+!!- keycode  45 = t T U00fe U00de 	U03c4 U03a4 
+!!- keycode  46 = n N n N 	U03bd U039d
+!!- keycode  47 = s S U00a7 U03a3 	U03c3 U03a3
+!!- keycode  48 = minus asciitilde emdash asciicircum 
+
+!!- keycode  52 = semicolon colon therefore because
+!!- keycode  53 = q Q q Q 	U03b8 U0398
+!!- keycode  54 = j J j J 	U03c8 U03a8
+!!- keycode  55 = k K k K 	U03ba U039a
+!!- keycode  56 = x X x X 	U03be U039e
+!!- keycode  57 = b B b B 	U03b2 U0392
+!!- keycode  58 = m M m M 	U03bc U039c
+!!- keycode  59 = w W w W 	U03c9 U03a9
+!!- keycode  60 = v V v V 	U03c2 U09a2
+!!- keycode  61 = z Z z Z 	U03b6 U03a6
+
+
+!!- keycode  65 = space
+
+!!- !! zZvVwWmMbB 
+!!- !! nNtThHdD
+!!- !! lLrR gGfF
+
+!!- keycode 130 = Hangul NoSymbol Hangul NoSymbol Hangul
+!!- keycode 131 = Hangul_Hanja NoSymbol Hangul_Hanja NoSymbol Hangul_Hanja
+!!- keycode 132 =
+
+
+!!- keycode 136 = Cancel NoSymbol Cancel NoSymbol Cancel
+!!- keycode 137 = Redo NoSymbol Redo NoSymbol Redo
+!!- keycode 138 = SunProps NoSymbol SunProps NoSymbol SunProps
+!!- keycode 139 = Undo NoSymbol Undo NoSymbol Undo
+!!- keycode 140 = SunFront NoSymbol SunFront NoSymbol SunFront
+!!- keycode 141 = XF86Copy NoSymbol XF86Copy NoSymbol XF86Copy
+!!- keycode 142 = XF86Open NoSymbol XF86Open NoSymbol XF86Open
+!!- keycode 143 = XF86Paste NoSymbol XF86Paste NoSymbol XF86Paste
+!!- keycode 144 = Find NoSymbol Find NoSymbol Find
+!!- keycode 145 = XF86Cut NoSymbol XF86Cut NoSymbol XF86Cut
+!!- keycode 146 = Help NoSymbol Help NoSymbol Help
+!!- keycode 147 = XF86MenuKB NoSymbol XF86MenuKB NoSymbol XF86MenuKB
+!!- keycode 148 = XF86Calculator NoSymbol XF86Calculator NoSymbol XF86Calculator
+!!- keycode 149 =
+!!- keycode 150 = XF86Sleep NoSymbol XF86Sleep NoSymbol XF86Sleep
+!!- keycode 151 = XF86WakeUp NoSymbol XF86WakeUp NoSymbol XF86WakeUp
+!!- keycode 152 = XF86Explorer NoSymbol XF86Explorer NoSymbol XF86Explorer
+!!- keycode 153 = XF86Send NoSymbol XF86Send NoSymbol XF86Send
+!!- keycode 154 =
+!!- keycode 155 = XF86Xfer NoSymbol XF86Xfer NoSymbol XF86Xfer
+!!- keycode 156 = XF86Launch1 NoSymbol XF86Launch1 NoSymbol XF86Launch1
+!!- keycode 157 = XF86Launch2 NoSymbol XF86Launch2 NoSymbol XF86Launch2
+!!- keycode 158 = XF86WWW NoSymbol XF86WWW NoSymbol XF86WWW
+!!- keycode 159 = XF86DOS NoSymbol XF86DOS NoSymbol XF86DOS
+!!- keycode 160 = XF86ScreenSaver NoSymbol XF86ScreenSaver NoSymbol XF86ScreenSaver
+!!- keycode 161 =
+!!- keycode 162 = XF86RotateWindows NoSymbol XF86RotateWindows NoSymbol XF86RotateWindows
+!!- keycode 163 = XF86Mail NoSymbol XF86Mail NoSymbol XF86Mail
+!!- keycode 164 = XF86Favorites NoSymbol XF86Favorites NoSymbol XF86Favorites
+!!- keycode 165 = XF86MyComputer NoSymbol XF86MyComputer NoSymbol XF86MyComputer
+!!- keycode 166 = XF86Back NoSymbol XF86Back NoSymbol XF86Back
+!!- keycode 167 = XF86Forward NoSymbol XF86Forward NoSymbol XF86Forward
+!!- keycode 168 =
+!!- keycode 169 = XF86Eject NoSymbol XF86Eject NoSymbol XF86Eject
+!!- keycode 170 = XF86Eject XF86Eject XF86Eject XF86Eject XF86Eject XF86Eject
+!!- keycode 171 = XF86AudioNext NoSymbol XF86AudioNext NoSymbol XF86AudioNext
+!!- keycode 172 = XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause XF86AudioPlay XF86AudioPause
+!!- keycode 173 = XF86AudioPrev NoSymbol XF86AudioPrev NoSymbol XF86AudioPrev
+!!- keycode 174 = XF86AudioStop XF86Eject XF86AudioStop XF86Eject XF86AudioStop XF86Eject
+!!- keycode 175 = XF86AudioRecord NoSymbol XF86AudioRecord NoSymbol XF86AudioRecord
+!!- keycode 176 = XF86AudioRewind NoSymbol XF86AudioRewind NoSymbol XF86AudioRewind
+!!- keycode 177 = XF86Phone NoSymbol XF86Phone NoSymbol XF86Phone
+!!- keycode 178 =
+!!- keycode 179 = XF86Tools NoSymbol XF86Tools NoSymbol XF86Tools
+!!- keycode 180 = XF86HomePage NoSymbol XF86HomePage NoSymbol XF86HomePage
+!!- keycode 181 = XF86Reload NoSymbol XF86Reload NoSymbol XF86Reload
+!!- keycode 182 = XF86Close NoSymbol XF86Close NoSymbol XF86Close
+!!- keycode 183 =
+!!- keycode 184 =
+!!- keycode 185 = XF86ScrollUp NoSymbol XF86ScrollUp NoSymbol XF86ScrollUp
+!!- keycode 186 = XF86ScrollDown NoSymbol XF86ScrollDown NoSymbol XF86ScrollDown
+!!- keycode 187 = parenleft NoSymbol parenleft NoSymbol parenleft
+!!- keycode 188 = parenright NoSymbol parenright NoSymbol parenright
+!!- keycode 189 = XF86New NoSymbol XF86New NoSymbol XF86New
+!!- keycode 190 = Redo NoSymbol Redo NoSymbol Redo
+!!- keycode 191 = XF86Tools NoSymbol XF86Tools NoSymbol XF86Tools
+!!- keycode 192 = XF86Launch5 NoSymbol XF86Launch5 NoSymbol XF86Launch5
+!!- keycode 193 = XF86Launch6 NoSymbol XF86Launch6 NoSymbol XF86Launch6
+!!- keycode 194 = XF86Launch7 NoSymbol XF86Launch7 NoSymbol XF86Launch7
+!!- keycode 195 = XF86Launch8 NoSymbol XF86Launch8 NoSymbol XF86Launch8
+!!- keycode 196 = XF86Launch9 NoSymbol XF86Launch9 NoSymbol XF86Launch9
+!!- keycode 197 =
+!!- keycode 198 =
+!!- keycode 199 = XF86TouchpadToggle NoSymbol XF86TouchpadToggle NoSymbol XF86TouchpadToggle
+!!- keycode 200 = XF86TouchpadOn NoSymbol XF86TouchpadOn NoSymbol XF86TouchpadOn
+!!- keycode 201 = XF86TouchpadOff NoSymbol XF86TouchpadOff NoSymbol XF86TouchpadOff
+!!- keycode 202 =
+!!- keycode 203 = Mode_switch NoSymbol Mode_switch NoSymbol Mode_switch
+!!- keycode 204 = NoSymbol Alt_L NoSymbol Alt_L NoSymbol Alt_L
+!!- keycode 205 = NoSymbol Meta_L NoSymbol Meta_L NoSymbol Meta_L
+!!- keycode 206 = NoSymbol Super_L NoSymbol Super_L NoSymbol Super_L
+!!- keycode 207 = NoSymbol Hyper_L NoSymbol Hyper_L NoSymbol Hyper_L
+!!- keycode 208 = XF86AudioPlay NoSymbol XF86AudioPlay NoSymbol XF86AudioPlay
+!!- keycode 209 = XF86AudioPause NoSymbol XF86AudioPause NoSymbol XF86AudioPause
+!!- keycode 210 = XF86Launch3 NoSymbol XF86Launch3 NoSymbol XF86Launch3
+!!- keycode 211 = XF86Launch4 NoSymbol XF86Launch4 NoSymbol XF86Launch4
+!!- keycode 212 = XF86LaunchB NoSymbol XF86LaunchB NoSymbol XF86LaunchB
+!!- keycode 213 = XF86Suspend NoSymbol XF86Suspend NoSymbol XF86Suspend
+!!- keycode 214 = XF86Close NoSymbol XF86Close NoSymbol XF86Close
+!!- keycode 215 = XF86AudioPlay NoSymbol XF86AudioPlay NoSymbol XF86AudioPlay
+!!- keycode 216 = XF86AudioForward NoSymbol XF86AudioForward NoSymbol XF86AudioForward
+!!- keycode 217 =
+!!- keycode 218 = Print NoSymbol Print NoSymbol Print
+!!- keycode 219 =
+!!- keycode 220 = XF86WebCam NoSymbol XF86WebCam NoSymbol XF86WebCam
+!!- keycode 221 =
+!!- keycode 222 =
+!!- keycode 223 = XF86Mail NoSymbol XF86Mail NoSymbol XF86Mail
+!!- keycode 224 = XF86Messenger NoSymbol XF86Messenger NoSymbol XF86Messenger
+!!- keycode 225 = XF86Search NoSymbol XF86Search NoSymbol XF86Search
+!!- keycode 226 = XF86Go NoSymbol XF86Go NoSymbol XF86Go
+!!- keycode 227 = XF86Finance NoSymbol XF86Finance NoSymbol XF86Finance
+!!- keycode 228 = XF86Game NoSymbol XF86Game NoSymbol XF86Game
+!!- keycode 229 = XF86Shop NoSymbol XF86Shop NoSymbol XF86Shop
+!!- keycode 230 =
+!!- keycode 231 = Cancel NoSymbol Cancel NoSymbol Cancel
+!!- keycode 232 = XF86MonBrightnessDown NoSymbol XF86MonBrightnessDown NoSymbol XF86MonBrightnessDown
+!!- keycode 233 = XF86MonBrightnessUp NoSymbol XF86MonBrightnessUp NoSymbol XF86MonBrightnessUp
+!!- keycode 234 = XF86AudioMedia NoSymbol XF86AudioMedia NoSymbol XF86AudioMedia
+!!- keycode 235 = XF86Display NoSymbol XF86Display NoSymbol XF86Display
+!!- keycode 236 = XF86KbdLightOnOff NoSymbol XF86KbdLightOnOff NoSymbol XF86KbdLightOnOff
+!!- keycode 237 = XF86KbdBrightnessDown NoSymbol XF86KbdBrightnessDown NoSymbol XF86KbdBrightnessDown
+!!- keycode 238 = XF86KbdBrightnessUp NoSymbol XF86KbdBrightnessUp NoSymbol XF86KbdBrightnessUp
+!!- keycode 239 = XF86Send NoSymbol XF86Send NoSymbol XF86Send
+!!- keycode 240 = XF86Reply NoSymbol XF86Reply NoSymbol XF86Reply
+!!- keycode 241 = XF86MailForward NoSymbol XF86MailForward NoSymbol XF86MailForward
+!!- keycode 242 = XF86Save NoSymbol XF86Save NoSymbol XF86Save
+!!- keycode 243 = XF86Documents NoSymbol XF86Documents NoSymbol XF86Documents
+!!- keycode 244 = XF86Battery NoSymbol XF86Battery NoSymbol XF86Battery
+!!- keycode 245 = XF86Bluetooth NoSymbol XF86Bluetooth NoSymbol XF86Bluetooth
+!!- keycode 246 = XF86WLAN NoSymbol XF86WLAN NoSymbol XF86WLAN
+!!- keycode 247 =
+!!- keycode 248 =
+!!- keycode 249 =
+!!- keycode 250 =
+!!- keycode 251 =
+!!- keycode 252 =
+!!- keycode 253 =
+!!- keycode 254 =
+!!- keycode 255 =
+
+
+
+add shift = Shift_L Shift_R
+add control = Control_L Control_R
+add mod1 = Meta_L Meta_R Alt_L Alt_R
+add mod2 = ISO_Level3_Shift Mode_switch
+add mod3 = Hyper_R
+add mod4 = Super_L
+add mod5 = ISO_Level5_Shift
+
