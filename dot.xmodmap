@@ -250,6 +250,7 @@ keycode  61 = slash backslash squareroot checkmark
 
 keycode  65 = space
 
+clear Lock
 
 add shift = Shift_L Shift_R
 add control = Control_L Control_R

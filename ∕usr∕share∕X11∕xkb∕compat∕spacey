@@ -7,10 +7,10 @@
 xkb_compatibility "spacey" {
      include "complete";
 
-     virtual_modifiers Shift,Control,Meta,Super,Hyper,AltGr,Lock;
+     virtual_modifiers Shift,Control,Meta,Super,Hyper,AltGr,LevelThree,LevelFive,Lock;
 
-     interpret Shift_L { action = SetMods(modifiers=Shift); };
-     interpret Shift_R { action = SetMods(modifiers=Shift); };
+     interpret Shift_L { action = SetMods(modifiers=Shift,clearLocks); };
+     interpret Shift_R { action = SetMods(modifiers=Shift,clearLocks); };
 
      interpret Control_L { action = SetMods(modifiers=Control); };
      interpret Control_R { action = SetMods(modifiers=Control); };
@@ -22,8 +22,8 @@ xkb_compatibility "spacey" {
 
      interpret Hyper_R { action = SetMods(modifiers=Mod4); };
 
-     interpret ISO_Level3_Shift { action = SetMods(modifiers=AltGr); };
+     interpret ISO_Level3_Shift { action = SetMods(modifiers=AltGr,LevelThree); };
 
-     interpret ISO_Level5_Shift { action = LatchGroup(group=2); };
+     interpret ISO_Level5_Shift { action = SetMods(modifiers=LevelFive); };
 
 };

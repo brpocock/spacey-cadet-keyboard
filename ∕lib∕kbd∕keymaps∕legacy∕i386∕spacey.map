@@ -302,7 +302,7 @@ keycode 104 = Prior Scroll_Backward
 keycode 111 = Alt # Hyper
 keycode 107 = Insert
 keycode 109 = Next Scroll_Forward
-control	alt keycode 111 = Boot
+control	alt keycode 111 = Boot # Backup case. Like C-A-DEL
 
 #
 # The three system keys
@@ -317,8 +317,8 @@ plain   keycode  70 = Last_Console
 shift	keycode  70 = Show_Memory
 control keycode  70 = Show_State
 alt	keycode  70 = Show_Registers
-control alt keycode 70 = Boot
-control altgr keycode 70 = Boot
+control alt keycode 70 = Boot # Preferred Spacey Cadet version
+control altgr keycode 70 = Boot # Preferred Spacey Cadet version
 
 keycode 119 = Pause # Mute
 keycode 101 = KeyboardSignal # Control+Mute

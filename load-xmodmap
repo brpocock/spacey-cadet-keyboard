@@ -1,0 +1,3 @@
+#!/bin/sh
+xenv xmodmap ~/.xmodmap
+xenv xset r 66
