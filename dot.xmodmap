@@ -9,6 +9,9 @@ clear Mod3
 clear Mod4
 clear Mod5
 
+! Non-existent keys to bind some mods
+keycode 252 = Alt_L Alt_R
+keycode 253 = Scroll_Lock Caps_Lock
 
 ! First, let's just alter the modifier and AID keys, without changing
 ! any of the typewriter keys' layouts.
