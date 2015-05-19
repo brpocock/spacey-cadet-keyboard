@@ -1,0 +1,22 @@
+--- evdev.xml~	2014-11-10 22:35:38.000000000 -0500
++++ evdev.xml	2015-05-19 16:01:45.615895148 -0400
+@@ -1297,6 +1297,19 @@
+     </model>
+   </modelList>
+   <layoutList>
++
++    <layout>
++      <configItem>
++        <name>spacey</name>
++        
++        <shortDescription>spacey</shortDescription>
++        <description>Spacey Cadet — English, Dvorak, Programmer</description>
++        <languageList>
++          <iso639Id>eng</iso639Id>
++        </languageList>
++      </configItem>
++    </layout>
++
+     <layout>
+       <configItem>
+         <name>us</name>
