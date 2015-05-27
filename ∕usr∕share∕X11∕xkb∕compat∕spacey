@@ -5,44 +5,39 @@
 /// This is /usr/share/X11/xkb/compat/spacey
 
 xkb_compatibility "spacey" {
-     virtual_modifiers Shift,Control,Alt,Meta,AltGr,LevelThree,LevelFive,Super,Hyper,Lock;
+    virtual_modifiers Shift,Control,Alt,Meta,AltGr,LevelThree,LevelFive,Super,Hyper,Lock;
 
-    interpret.useModMapMods= AnyLevel;
-    interpret.repeat= False;
-    interpret.locking= False;
+    interpret.useModMapMods = AnyLevel;
+    interpret.repeat = False;
+    interpret.locking = False;
 
-     interpret Shift_L { action = SetMods(modifiers=Shift,clearLocks); };
-     interpret Shift_R { action = SetMods(modifiers=Shift,clearLocks); };
+    interpret Shift_L { action = SetMods(modifiers=Shift,clearLocks); };
+    interpret Shift_R { action = SetMods(modifiers=Shift,clearLocks); };
 
-     interpret Control_L { action = SetMods(modifiers=Control,clearLocks); };
-     interpret Control_R { action = SetMods(modifiers=Control,clearLocks); };
+    interpret Control_L { action = SetMods(modifiers=Control,clearLocks); };
+    interpret Control_R { action = SetMods(modifiers=Control,clearLocks); };
 
-     interpret Meta_L { virtualModifier = Alt,Meta;
-                        action = SetMods(modifiers=Alt+Meta,clearLocks); };
-     interpret Meta_R { virtualModifier = Alt,Meta;
-                        action = SetMods(modifiers=Alt+Meta,clearLocks); };
+    interpret Meta_L { action = SetMods(modifiers=Alt+Meta,clearLocks); };
+    interpret Meta_R { action = SetMods(modifiers=Alt+Meta,clearLocks); };
 
-     interpret Super_L { action = SetMods(modifiers=Super,clearLocks); };
+    interpret Super_L { action = SetMods(modifiers=Super,clearLocks); };
 
-     interpret Hyper_R { action = SetMods(modifiers=Hyper,clearLocks); };
+    interpret Hyper_R { action = SetMods(modifiers=Hyper,clearLocks); };
 
-    interpret ISO_Level3_Shift+AnyOf(all) {
-        virtualModifier= LevelThree;
-        useModMapMods=level1;
-        action= SetMods(modifiers=LevelThree,clearLocks);
-    };
-    interpret Mode_Shift+AnyOf(all) {
-        virtualModifier= LevelThree;
-        useModMapMods=level1;
-        action= SetMods(modifiers=LevelThree,clearLocks);
-    };
+    interpret ISO_Level3_Shift
+                          { action= SetMods(modifiers=LevelThree,clearLocks); };
+    interpret ISO_Level5_Shift
+                          { action = SetMods(modifiers=LevelFive,clearLocks); };
 
-     interpret ISO_Level5_Shift { virtualModifier= LevelFive;
-                                  action = SetMods(modifiers=LevelFive,clearLocks); };
+    interpret Shift_Lock { action = LockMods(modifiers=Shift); };
+    interpret Caps_Lock { action = LockMods(modifiers=Lock); };
+    interpret ISO_Level5_Lock { action = LockMods(modifiers=LevelFive); };
+    interpret ISO_Level3_Lock
+                         { action = LockMods(modifiers=LevelThree+LevelFive); };
 
     group2 = AltGr;
     group3 = LevelFive;
-    group4 = AltGr+LevelFive
+    group4 = AltGr+LevelFive;
 
     indicator "Caps Lock" {
         !allowExplicit;

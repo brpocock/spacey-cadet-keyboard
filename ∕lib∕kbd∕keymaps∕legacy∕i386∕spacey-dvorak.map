@@ -7,13 +7,13 @@ strings as usual
 
 # plain sh altgr sh+altgr c c+sh alt sh+alt c+alt
 
-keycode   1 = Alt # Super           
+keycode   1 = Alt # Super
 
 # 1 ! ☠ ☿
-keycode   2 = one    exclam      U+2620 U+263f 
+keycode   2 = one    exclam      U+2620 U+263f
 
 # 2 | ∈ ♀
-keycode   3 = two    bar         U+2208 U+2640 
+keycode   3 = two    bar         U+2208 U+2640
 
 # 3 # ∋ ⊕
 keycode   4 = three  numbersign  U+220b U+2295     Escape
@@ -41,83 +41,83 @@ keycode  10 = nine   braceleft   U+0192 U+263d
 keycode  11 = zero   braceright  U+221e U+2609
 
 
-keycode  12 = parenleft   bracketleft   parenleft  bracketleft     Escape          
+keycode  12 = parenleft   bracketleft   parenleft  bracketleft     Escape
 keycode  13 = parenright  bracketright  parenright bracketright    Control_bracketright
 
 keycode  14 = Tab         Meta_Tab
 
-keycode  15 = Break Control_z Break Control_z  Control_backslash              
-	control keycode  43 = Control_backslash
+keycode  15 = Break Control_z Break Control_z  Control_backslash
+control keycode  43 = Control_backslash
 
 # ' " ` ¬
-keycode  16 = apostrophe  quotedbl        grave    U+00ac     Control_g       
+keycode  16 = apostrophe  quotedbl        grave    U+00ac     Control_g
 # , < , «
 keycode  17 = comma       less            comma    guillemotleft
 # . > . »
 keycode  18 = period      greater         period   guillemotright
 
-keycode  19 = p               
-keycode  20 = y               
-keycode  21 = f               
-keycode  22 = g               
-keycode  23 = c               
-keycode  24 = r               
-keycode  25 = l               
+keycode  19 = p
+keycode  20 = y
+keycode  21 = f
+keycode  22 = g
+keycode  23 = c
+keycode  24 = r
+keycode  25 = l
 
 # / \ √ ✓
 keycode  26 = slash     backslash      U+221a U+2713
-	control keycode  26 = Delete          
+control keycode  26 = Delete
 
 # + = ✝ ≈
-keycode  27 = plus       equal      U+271d U+2248       
+keycode  27 = plus       equal      U+271d U+2248
 
-keycode  28 = Return          
-        alt     keycode  28 = Meta_Control_m
+keycode  28 = Return
+alt     keycode  28 = Meta_Control_m
 
-keycode  29 = Control         
+keycode  29 = Control
 
-keycode  30 = a            
-keycode  31 = o               
-keycode  32 = e               
-keycode  33 = u               
-keycode  34 = i             
-keycode  35 = d               
-keycode  36 = h               
-keycode  37 = t               
-keycode  38 = n               
-keycode  39 = s               
+keycode  30 = a
+keycode  31 = o
+keycode  32 = e
+keycode  33 = u
+keycode  34 = i
+keycode  35 = d
+keycode  36 = h
+keycode  37 = t
+keycode  38 = n
+keycode  39 = s
 
 # - ~ — ^ (minus tilde emdash circumflex)
 #keycode  40 = minus      asciitilde  U+2014 asciicircum  Control_underscore
 keycode  40 = minus      asciitilde  minus asciicircum  Control_underscore
 
 keycode  41 = Escape
-	control keycode  41 = nul             
+control keycode  41 = nul
 
-keycode  42 = Shift           
+keycode  42 = Shift
 
 # * @ ⁂ ★
-keycode  43 = asterisk    at         U+271d U+2605 nul            
+keycode  43 = asterisk    at         U+271d U+2605 nul
 
 # ; : ∵ ∴
 keycode  44 = semicolon        colon  U+2235  U+2234
 
-keycode  45 = q               
-keycode  46 = j               
-keycode  47 = k               
-keycode  48 = x               
-keycode  49 = b               
-keycode  50 = m               
-keycode  51 = w               
-keycode  52 = v               
-keycode  53 = z               
+keycode  45 = q
+keycode  46 = j
+keycode  47 = k
+keycode  48 = x
+keycode  49 = b
+keycode  50 = m
+keycode  51 = w
+keycode  52 = v
+keycode  53 = z
 
-keycode  54 = Shift        
-keycode  56 = Alt             
+keycode  54 = Shift
+keycode  56 = Alt
 
-keycode  57 = space            
-	control keycode  57 = nul 
-	control alt keycode 57 = F71
+keycode  57 = space
+control keycode  57 = nul
+control alt keycode 57 = F71
 
 keycode  58 = Delete
 keycode  86 = AltGr
@@ -129,70 +129,70 @@ keycode 127 = Control
 
 # Clear Delete ␢ ␣ (FF, BS)
 keycode  69 = U+000c U+0008 U+2422 U+2423
- control AltGr keycode  69 = Hex_A
+control AltGr keycode  69 = Hex_A
 
 # / ÷ λ ∕ (slash, divide, lambda, fraction bar)
 #keycode  98 = KP_Divide U+00f7 U+03bb U+2215
 keycode  98 = KP_Divide U+00f7 L U+2215
- control AltGr keycode  98 = Hex_B
+control AltGr keycode  98 = Hex_B
 
 # * × ° ⋅
 keycode  55 = KP_Multiply U+00d7 U+00b0 U+22c5
- control AltGr keycode  55 = Hex_C
- 
+control AltGr keycode  55 = Hex_C
+
 # - ¯ ‐ – (minus, macron, hyphen, en dash)
 #keycode  74 = KP_Subtract U+00af U+2010 U+2013
 keycode  74 = KP_Subtract U+00af U+2010 minus
- control AltGr keycode  74 = Hex_D
- 
+control AltGr keycode  74 = Hex_D
+
 # + = ℵ •
 #keycode  78 = KP_Add equal U+2135 U+2022
 keycode  78 = KP_Add equal U+2135 plus
- control AltGr keycode  78 = Hex_E
- 
+control AltGr keycode  78 = Hex_E
+
 keycode  96 = KP_Enter
- control AltGr keycode  96 = Hex_F
- 
+control AltGr keycode  96 = Hex_F
+
 
 keycode  71 = seven
- control AltGr keycode  71 = Hex_7
- Alt keycode  71 = Ascii_7
+control AltGr keycode  71 = Hex_7
+Alt keycode  71 = Ascii_7
 
 keycode  72 = eight
- control AltGr keycode  72 = Hex_8
- Alt keycode  72 = Ascii_8
+control AltGr keycode  72 = Hex_8
+Alt keycode  72 = Ascii_8
 
 keycode  73 = nine
- control AltGr keycode  73 = Hex_9
- Alt keycode  73 = Ascii_9
+control AltGr keycode  73 = Hex_9
+Alt keycode  73 = Ascii_9
 
 keycode  75 = four
- control AltGr keycode  75 = Hex_4
- Alt keycode  75 = Ascii_4
+control AltGr keycode  75 = Hex_4
+Alt keycode  75 = Ascii_4
 
 keycode  76 = five
- control AltGr keycode  76 = Hex_5
- Alt keycode  76 = Ascii_5
+control AltGr keycode  76 = Hex_5
+Alt keycode  76 = Ascii_5
 
 keycode  77 = six
- control AltGr keycode  77 = Hex_6
- Alt keycode  77 = Ascii_6
+control AltGr keycode  77 = Hex_6
+Alt keycode  77 = Ascii_6
 
 keycode  79 = one
- control AltGr keycode  79 = Hex_1
- Alt keycode  79 = Ascii_1
+control AltGr keycode  79 = Hex_1
+Alt keycode  79 = Ascii_1
 
 keycode  80 = two
- control AltGr keycode  80 = Hex_2
- Alt keycode  80 = Ascii_2
+control AltGr keycode  80 = Hex_2
+Alt keycode  80 = Ascii_2
 
 keycode  81 = three
- control AltGr keycode  81 = Hex_3
- Alt keycode  81 = Ascii_3
+control AltGr keycode  81 = Hex_3
+Alt keycode  81 = Ascii_3
 
 keycode  82 = zero   F70
- control AltGr keycode  82 = Hex_0
- Alt keycode  82 = Ascii_0
+control AltGr keycode  82 = Hex_0
+Alt keycode  82 = Ascii_0
 
 string F70 = "000"
 
@@ -206,8 +206,8 @@ keycode 83 = period comma
 # It does not use the AltGr modifier, so that the user can opt
 # to have both Alt keys produce the same effect.
 # As a consequence, the Hex_* keys are missing, as are
-#	control altgr keycode  83 = Boot
-#	control altgr keycode 111 = Boot
+# control altgr keycode  83 = Boot
+# control altgr keycode 111 = Boot
 #
 # One culture-specific item that will be overridden in many keymaps
 # is the KP_Period: many countries have a KP_Comma instead.
@@ -256,7 +256,7 @@ control keycode  87 = F35
 control keycode  88 = F36
 #
 # The canonical assignment for F37-F48 uses
-#	control shift keycode  59 = F37
+# control shift keycode  59 = F37
 # etc. If you want that, load linux-keys-extd.inc
 #
 # Both Alt+Fn and Control+Alt+Fn switch to Console n
@@ -302,7 +302,7 @@ keycode 104 = Prior Scroll_Backward
 keycode 111 = Alt # Hyper
 keycode 107 = Insert
 keycode 109 = Next Scroll_Forward
-control	alt keycode 111 = Boot
+control alt keycode 111 = Boot
 
 #
 # The three system keys
@@ -310,13 +310,13 @@ control	alt keycode 111 = Boot
 # Last_Console
 keycode  99 = Incr_Console # Play
 keycode  84 = Decr_Console # Alt+Play
-alt	keycode  99 = Control_backslash
-control	keycode  99 = Control_backslash
+alt keycode  99 = Control_backslash
+control keycode  99 = Control_backslash
 
 plain   keycode  70 = Last_Console
-shift	keycode  70 = Show_Memory
+shift keycode  70 = Show_Memory
 control keycode  70 = Show_State
-alt	keycode  70 = Show_Registers
+alt keycode  70 = Show_Registers
 control alt keycode 70 = Boot
 control altgr keycode 70 = Boot
 

@@ -1,11 +1,96 @@
 // Spacey Cadet keyboard layout
-// Offered into the Public Domain by Bruce-Robert Pocock <brpocock@star-hope.org>
-// CC-0 license.
+// Offered into the Public Domain
+// by Bruce-Robert Fenn Pocock <brpocock@star-hope.org>
+// (CC-0 license.)
 
+// The “Spacey Cadet” keyboard is a Dvorak, Space Cadet-inspired keyboard with
+// function keys and punctuation laid out for the convenience of a (at least
+// this one) Lisp programmer who writes a lot of technical content. It maps
+// many typographic punctuation features, and has a plethora of Bucky keys
+// (Shift, Control, AltGr, Meta, Compose, Greek, Super, Hyper) as well as some
+// more ergonomic / logical placements of navigation/editing keys.
+
+// Function key row:
+
+// Super [bright white]
+// Grey keys (AltGr = f1…f11; Shift+AltGr=f13…f23)
+// Help; Properties; Back (Undo); History (Paste);
+// Build (Cut); Inspect (Copy/Attach); Execute; REPL (Settings)
+// Camera; Menu; Zoom
+
+// Lock [red] (AltGr = f12; with Shift = f24)
+// Play/Pause (Back; Forward) [orange];
+// System Request (Reset) [red];
+// Mute (Volume) [orange]
+
+// Navigation keys on left: Escape; Stop (Pause); Delete left [red keys]
+// (then: Shift, Greek; Control, Alt. Gr., Meta)
+// on right: Tabulate [grey]; Return [green];
+// (then: Shift; Meta, Compose, Control)
+// Delete right (in bottom-right) [red]
+
+// Six-key editing keypad:
+// Home; End; Prior
+// Hyper; Insert; Next (Prior/Next align vertically)
+
+// Numeric keypad: Digits ignore shift; Clear key shifts to KP-Delete; Enter
+
+
+/// Unshifted "white" keys:
+/// 1 2 3 4 5 6 7 8 9 0 ( )            / * -
+///  ' , . p y f g c r l / +         7 8 9
+///   a o e u i d h t n s - *        4 5 6 +
+///    ; q j k x b m w v z           1 2 3     0 .
+
+/// Shifted:
+/// ! | # $ % _ & ? { } [ ]            ÷ × ¯
+///  " < > P Y F G C R L \ =         7 8 9
+///   A O E U I D H T N S ~ @        4 5 6 =
+///    : Q J K X B M W V Z           1 2 3    0 ,
+
+/// AltGr:
+/// ☠ ∈ ∋ ✗ ♪ † ∀ □ ƒ ∞ ( )      ␢ λ ° ‐
+///  ` , . p ¥ f ¿ ¢ ™ ¡ √ ✝        ↖ ↑ ↗
+///   a o … u i ð ⁂ þ n § — ⁂      ← ↔ → ℵ
+///    ∴ q j k x b m w v z           ↙ ↓ ↘     ↕ .
+/// (AltGr+Space =   (sticky/non-breaking space)
+
+/// Shift+AltGr:
+/// ☿ ♀ ⊕ ♂ ♃ ♄ ♅ ♆ ☽ ☉ [ ]        ␣ ⁄ ⋅ –
+///  ¬ « » ¶ ☯ F G © ® £ ✓ ≈        ⇖ ⇑ ⇗
+///   A O € U I Ð ⁂ Þ N Σ ^ ★      ⇐ ⇔ ⇒ •
+///    ∵ Q J K X B M W V Z           ⇙ ⇓ ⇘    ⇕ ,
+
+/// Greek:
+///                     ‘ ’
+///      … π ϗ φ γ χ ρ λ   ±
+///   α ο ε υ ι δ η τ ν σ
+///      θ ψ κ κ ξ β μ ω ς ζ
+
+/// Shift+Greek:
+///                     “ ”
+///  " < > Π ϕ Φ Γ Χ α Λ   ≠
+///   Α Ο Ε Υ Ι Δ Η Τ Ν Σ   @
+///    : Θ Κ Ξ Β Μ Ω   Ζ
+
+/// Sh+Gr+v ⇒ dead_greek (prefix key)
+
+/// AltGr+Greek:
+///  ъ ь э п й ф г ч р л   ю
+///   а о е у и д х т н с   я
+///    ы ц ж к щ б м ш в з
+
+/// Shift+AltGr+Greek:
+///  Ъ Ь Э П Й Ф Г Ч Р Л   Ю
+///   А О Е У И Д Х Т Н С   Я
+///    Ы Ц Ж К Щ Б М Ш В З
 
 xkb_symbols "spacey" {
 
     name[group1]="Spacey Cadet";
+
+
+// -------------------------------------------------------------------------- //
 
     // Function Keys Row
     // =================
@@ -16,39 +101,56 @@ xkb_symbols "spacey" {
     };
 
     key <FK01>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ Help,     osfHelp,      F1,  F13, XF86Switch_VT_1 ]};
+                  symbols[group1]=[ Help,        osfHelp,    F1, F13, XF86Switch_VT_1 ]};
     key <FK02>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ SunProps, XF86Option,   F2,  F14, XF86Switch_VT_2 ]};
+                  symbols[group1]=[ SunProps,    XF86Option, F2, F14, XF86Switch_VT_2 ]};
     key <FK03>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ XF86Back, SunUndo,      F3,  F15, XF86Switch_VT_3 ]};
+                  symbols[group1]=[ XF86Back,    SunUndo,    F3, F15, XF86Switch_VT_3 ]};
     key <FK04>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ XF86History, SunPaste,   F4,  F16, XF86Switch_VT_4 ]};
+                  symbols[group1]=[ XF86History, SunPaste,   F4, F16, XF86Switch_VT_4 ]};
+
+
     key <FK05>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ XF86New,   SunCut,   F5,  F17, XF86Switch_VT_5 ]};
+                  symbols[group1]=[ XF86New,  SunCut,        F5, F17, XF86Switch_VT_5 ]};
     key <FK06>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ XF86View,  SunCopy,   F6,  F18, XF86Switch_VT_6 ]};
+                  symbols[group1]=[ XF86View, SunCopy,       F6, F18, XF86Switch_VT_6 ]};
     key <FK07>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ Execute,   XF86LightBulb,   F7,  F19, XF86Switch_VT_7 ]};
+                  symbols[group1]=[ Execute,  XF86LightBulb, F7, F19, XF86Switch_VT_7 ]};
     key <FK08>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ XF86Send, XF86Tools,   F8,  F20, XF86Switch_VT_8 ]};
+                  symbols[group1]=[ XF86Send, XF86Tools,     F8, F20, XF86Switch_VT_8 ]};
+
+
     key <FK09>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ Print,   XF86Video,   F9,  F21, XF86Switch_VT_9 ]};
+                  symbols[group1]=[ Print,      XF86Video,   F9,  F21, XF86Switch_VT_9 ]};
     key <FK10>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ Menu,    XF86MenuKB,   F10, F22, XF86Switch_VT_10 ]};
+                  symbols[group1]=[ Menu,       XF86MenuKB,  F10, F22, XF86Switch_VT_10 ]};
     key <FK11>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ XF86ZoomIn, XF86ZoomOut,    F11, F23, XF86Switch_VT_11 ]};
+                  symbols[group1]=[ XF86ZoomIn, XF86ZoomOut, F11, F23, XF86Switch_VT_11 ]};
+
+
+// -------------------------------------------------------------------------- //
+
+
     key <FK12>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ XF86ScreenSaver, XF86Away,   F12, F24, XF86Switch_VT_12 ]};
-    key <PRSC>  { type[group1]="TWO_LEVEL",  symbols[group1]=[ XF86AudioPlay, XF86AudioPause
-                //, XF86AudioPrev, XF86AudioNext 
-                ]};
-//    key <PRSC>  { type[group1]="BASE_SH_CTRL_META",  symbols[group1]=[ XF86AudioPlay, XF86AudioPause, XF86AudioPrev, XF86AudioNext ]};
+                  symbols[group1]=[ XF86ScreenSaver, XF86Away, F12, F24, XF86Switch_VT_12 ]};
+
+    key <PRSC>  { type[group1]="BASE_SH_CTRL_META",
+                  symbols[group1]=[ XF86AudioPlay, XF86AudioPause,
+                                    XF86AudioPrev, XF86AudioNext   ]};
     key <SCLK>  { type[group1]="CTRL+ALT",
                   symbols[group1]=[ Sys_Req, Sys_Req, Sys_Req, Sys_Req, Terminate_Server ]};
-    key <PAUS>  { type[group1]="BASE_SH_CTRL_META",  symbols[group1]=[ XF86AudioMute, XF86AudioMute, XF86AudioLowerVolume, XF86AudioRaiseVolume ]};
+    key <PAUS>  { type[group1]="BASE_SH_CTRL_META",
+                  symbols[group1]=[ XF86AudioMute, XF86AudioMute,
+                                    XF86AudioLowerVolume, XF86AudioRaiseVolume ]};
+
+
+// -------------------------------------------------------------------------- //
+
 
     // Alphanumeric section
     // ====================
+
+// -------------------------------------------------------------------------- //
 
     // * TOP ROW *
 
@@ -61,204 +163,225 @@ xkb_symbols "spacey" {
     //               1 2 3 4 5 6 7 8 9 0
 
     key <AE01> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       1,   exclam,      U2620,       U263f ]};
+                symbols[group1]=[       1,   exclam,      U2620,       U263f ]};
     key <AE02> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       2,   bar,         elementof,   U2640 ]};
+                symbols[group1]=[       2,   bar,         elementof,   U2640 ]};
     key <AE03> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       3,   numbersign,  containsas,  U2295 ]};
+                symbols[group1]=[       3,   numbersign,  containsas,  U2295 ]};
     key <AE04> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       4,   dollar,      U2717,       U2642 ]};
+                symbols[group1]=[       4,   dollar,      U2717,       U2642 ]};
     key <AE05> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       5,   percent,     U266a,       U2643 ]};
+                symbols[group1]=[       5,   percent,     U266a,       U2643 ]};
     key <AE06> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       6,   underscore,  dagger,      U2644 ]};
+                symbols[group1]=[       6,   underscore,  dagger,      U2644 ]};
     key <AE07> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       7,   ampersand,   U2200,       U2645 ]};
+                symbols[group1]=[       7,   ampersand,   U2200,       U2645 ]};
     key <AE08> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       8,   question,    U25a1,       U2646 ]};
+                symbols[group1]=[       8,   question,    U25a1,       U2646 ]};
     key <AE09> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       9,   braceleft,   function,    U263d ]};
+                symbols[group1]=[       9,   braceleft,   function,    U263d ]};
     key <AE10> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[       0,   braceright,  infinity,    U2609 ]};
+                symbols[group1]=[       0,   braceright,  infinity,    U2609 ]};
 
-    key <AD11> { type[group1]="EIGHT_LEVEL", symbols[group1]=[ parenleft,  bracketleft,parenleft,  bracketleft,
-                                    parenleft,  bracketleft,U2018, U201c ] };
-    key <AD12> { type[group1]="EIGHT_LEVEL", symbols[group1]=[ parenright, bracketright,parenright, bracketright,parenright, bracketright,
-                                    U2019, U201d ]};
-    key <BKSP> { type[group1]="TWO_LEVEL", symbols[group1]=[      Tab,   ISO_Left_Tab ]};
+    key <AD11> { type[group1]="EIGHT_LEVEL",
+                 symbols[group1]=[ parenleft, bracketleft,
+                                   parenleft, bracketleft,
+                                   U2018, U201c, U2018, U201c ] };
+    key <AD12> { type[group1]="EIGHT_LEVEL",
+                 symbols[group1]=[ parenright, bracketright,
+                                   parenright, bracketright,
+                                   U2019, U201d, U2019, U201d ]};
+    key <BKSP> { type[group1]="TWO_LEVEL",
+                 symbols[group1]=[ Tab, ISO_Left_Tab ]};
 
-    // * SECOND ROW *
+// -------------------------------------------------------------------------- //
 
-    key <TAB>  { type[group1]="BASE_SH_CTRL_META", symbols[group1]=[    XF86Stop, Pause,    XF86Stop, Break ]};
+    // * SECOND ROW * (Stop → +)
+
+    key <TAB>  { type[group1]="BASE_SH_CTRL_META",
+                 symbols[group1]=[ XF86Stop, Pause, XF86Stop, Break ]};
 
     // Top-left punctuation:
-    // Shift+AltGr    ¬ « »   Any+Shift+AltGr    Ъ Ь Э
-    //       AltGr    ` , .   Any   +   AltGr    ъ ь э
-    // Shift          " < >   Any+Shift          " < >
-    //                ' , .   Any                ' , .
+    // Shift+AltGr    ¬ « »   Greek+Shift+AltGr    Ъ Ь Э
+    //       AltGr    ` , .   Greek   +   AltGr    ъ ь э
+    // Shift          " < >   Greek+Shift          " < >
+    //                ' , .   Greek                ' , …
 
     key <AC11> { type[group1]="EIGHT_LEVEL",
-		symbols[group1]=[  apostrophe,   quotedbl, grave,  notsign , apostrophe,   quotedbl, U044a,  U042a ]};
+                symbols[group1]=[ apostrophe, quotedbl, grave,  notsign,
+                                  apostrophe, quotedbl, U044a,  U042a ]};
 
     key <AB08> { type[group1]="EIGHT_LEVEL",
-		symbols[group1]=[    comma,   less,     comma,  guillemotleft , comma, less, U044c,  U042c        ]};
+                symbols[group1]=[ comma,      less,     comma,  guillemotleft,
+                                  comma,      less,     U044c,  U042c        ]};
     key <AB09> { type[group1]="EIGHT_LEVEL",
-		symbols[group1]=[    period,   greater,  period, guillemotright, U2026, greater, U044d, U042d   ]};
+                symbols[group1]=[ period,     greater,  period, guillemotright,
+                                  U2026,      greater,  U044d,  U042d   ]};
 
 
-    /// NOTE: I'm using hardware-switched alphabetic layouts, so the
-    /// keysyms are bound to codes that align with the Qwerty layout
 
-
-    // Latin alphabet (base, shifted):
-    //       p y f g c r l
-    //  a o e u i d h t n s
-    //   q j k x b m w v z 
-
-    // Greek alphabet (Any):
-    //       π ϗ φ γ χ ρ λ
-    //  α ο ε υ ι δ η τ ν σ
-    //   θ ψ κ ξ β μ ω ς ζ 
-
-    // Cyrillic (Any+AltGr): *NB uses some punctuation keys too
-    // ъ ь э п й ф г ч р л ю я
-    //  а о е у и д х т н с
-    // ы ц ж к щ б м ш в з
-
-    // Hebrew (AltGr+Meta): *NB shifted→FINAL forms (not INITIAL like others above)
-
-    //                              [ x  Sh  AG Sh+AG  M Sh+M ] [Any    Any+Sh AG+Any A+A+S Any+M A+S+M  ]
-    //                              Latin    Alt         Greek         Cyrillic       Hebrew 
+    //                            ∅  Sh   AG     Sh+AG  Gr     Gr+Sh  AG+Gr  Sh+AG+Gr
+    //                            Latin   AltGr         Greek         Cyrillic
     key <AD10> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ p,   P, p, U00b6, U03c0, U03a0, U043f, U041f ]};
+                symbols[group1]=[ p,   P, p,     U00b6, U03c0, U03a0, U043f, U041f ]};
     key <AD06> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ y,   Y, U00a5, U262f, U03d7, U03d5, U0439, U0419]};
+                symbols[group1]=[ y,   Y, U00a5, U262f, U03d7, U03d5, U0439, U0419]};
     key <AC04> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ f,   F, f, F, U03c6, U03a6, U0444, U0424 ]};
+                symbols[group1]=[ f,   F, f,     F,     U03c6, U03a6, U0444, U0424 ]};
     key <AC05> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ g,   G, U00bf,   G, U03b3, U0393, U0433, U0413 ]};
+                symbols[group1]=[ g,   G, U00bf, G,     U03b3, U0393, U0433, U0413 ]};
     key <AB03> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ c,   C, cent, copyright, U03c7, U03a7, U0447, U0427 ]};
+                symbols[group1]=[ c, C, cent, copyright, U03c7, U03a7, U0447, U0427 ]};
     key <AD04> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ r,   R, trademark, registered,  U03c1, U03b1, U0440, U0420 ]};
+                symbols[group1]=[ r,   R, trademark, registered,
+                                                        U03c1, U03b1, U0440, U0420 ]};
     key <AC09> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ l,   L,  U00a1, U00a3, U03bb, U039b, U043b, U041b ]};
+                symbols[group1]=[ l,   L,  U00a1, U00a3, U03bb, U039b, U043b, U041b ]};
 
     key <AB10> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[ slash,   backslash, squareroot, checkmark ]};
-    //                                  + +     = =        ✝ ю         ≈ Ю
+                symbols[group1]=[ slash, backslash, squareroot, checkmark ]};
+    //                            +     =      ✝      ≈
+    //                                    ±          ≠          ю      Ю
     key <AE12> { type[group1]="EIGHT_LEVEL",
-		symbols[group1]=[ plus,   equal,     U271d,      U2248, plusminus,   notequal,     U044e,      U042e ]};
-    //                                  * *       @ @   ⁂ я     ★ Я
+                symbols[group1]=[ plus, equal, U271d, U2248,
+                                          plusminus, notequal,  U044e, U042e ]};
     key <BKSL> { type[group1]="EIGHT_LEVEL",
-		symbols[group1]=[ asterisk, at,   U2042, U2605, asterisk, at,   U044f, U042f ]};
+    //                            *         @   ⁂ я    ★ Я
+                symbols[group1]=[ asterisk, at, U2042, U2605,
+                                  asterisk, at, U044f, U042f ]};
 
     key <RTRN> { type[group1]="ONE_LEVEL", [ Return ]};
 
+// -------------------------------------------------------------------------- //
 
 
-    // * AE028 ROW *
+    // * AE028 ROW * (Delete → Return)
 
-    key <CAPS> { type[group1]="ONE_LEVEL", symbols[group1]=[ BackSpace ], repeat[group1]=Yes};
+    key <CAPS> { type[group1]="ONE_LEVEL", symbols[group1]=[ BackSpace ], repeat=yes};
 
-    //                              x  Sh  Any    Any+Sh AG+Any A+A+S Any+M A+S+M  
-    //                              Latin    Greek         Cyrillic       Hebrew 
+    //                            ∅  Sh AG     Sh+AG  Gr     Gr+Sh  AG+Gr  Sh+AG+Gr
+    //                            Latin AltGr         Greek         Cyrillic
     key <AC01> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ a,   A, a, A, U03b1, U0391, U0430, U0410 ]};
+                symbols[group1]=[ a, A, a,     A,     U03b1, U0391, U0430, U0410 ]};
     key <AD09> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ o,   O, o, O, U03bf, U039f, U043e, U041e ]};
+                symbols[group1]=[ o, O, o,     U2205, U03bf, U039f, U043e, U041e ]};
     key <AD03> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ e,   E, U2026, U20ac, U03b5, U0395, U0435, U0415 ]};
+                symbols[group1]=[ e, E, U2026, U20ac, U03b5, U0395, U0435, U0415 ]};
     key <AD07> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ u,   U, u, U, U03c5, U03a5, U0443, U0423 ]};
+                symbols[group1]=[ u, U, u,     U,     U03c5, U03a5, U0443, U0423 ]};
     key <AD08> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ i,   I, i, I, U03b9, U0399, U0438, U0418 ]};
+                symbols[group1]=[ i, I, i,     I,     U03b9, U0399, U0438, U0418 ]};
     key <AC03> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ d,   D, eth, ETH, U03b4, U0394, U0434, U0414 ]};
+                symbols[group1]=[ d, D, eth,   ETH,   U03b4, U0394, U0434, U0414 ]};
     key <AC06> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ h,   H, U2042, U2042, U03b7, U0397, U0445, U0425 ]};
+                symbols[group1]=[ h, H, U2042, U2042, U03b7, U0397, U0445, U0425 ]};
     key <AD05> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ t,   T,  thorn, THORN, U03c4, U03a4, U0442, U0422 ]};
+                symbols[group1]=[ t, T, thorn, THORN, U03c4, U03a4, U0442, U0422 ]};
     key <AB06> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ n,   N, n, N, U03bd, U039d, U043d, U041d ]};
+                symbols[group1]=[ n, N, n,     N,     U03bd, U039d, U043d, U041d ]};
     key <AC02> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ s,   S, U00a7, U03a3, U03c3, U03a3, U0441, U0421 ]};
+                symbols[group1]=[ s, S, U00a7, U03a3, U03c3, U03a3, U0441, U0421 ]};
     key <AE11> { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[ minus,   asciitilde, emdash, asciicircum ]};
+                symbols[group1]=[ minus, asciitilde, emdash, asciicircum ]};
 
+// -------------------------------------------------------------------------- //
 
-    // * BOTTOM ROW *
+    // * BOTTOM ROW * (white keys, ; → z)
 
-    // Cyrillic yeru (ы)
+    //                               ; : ∴ ∵ ; : ы Ы
     key <AC10> { type[group1]="EIGHT_LEVEL",
-		symbols[group1]=[ semicolon, colon,  therefore, because,
+                symbols[group1]=[ semicolon, colon,  therefore, because,
                                   semicolon, colon,  U044b, U042b    ]};
 
-    //                              x  Sh  Any    Any+Sh AG+Any A+A+S Any+M A+S+M  
-    //                              Latin    Greek         Cyrillic        
+    //                            ∅  Sh AG     Sh+AG  Gr     Gr+Sh  AG+Gr  Sh+AG+Gr
+    //                            Latin AltGr         Greek         Cyrillic
     key <AD01> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ q,   Q, q,   Q, U03b8, U0398, U0446, U0426] };
+                symbols[group1]=[ q, Q, q,     Q,     U03b8, U0398, U0446, U0426] };
     key <AC07> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ j,   J, j,   J, U03c8, U03a8, U0436, U0416] };
+                symbols[group1]=[ j, J, j,     J,     U03c8, U03a8, U0436, U0416] };
     key <AC08> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ k,   K, k,   K, U03ba, U039a, U043a, U041a] };
+                symbols[group1]=[ k, K, k,     K,     U03ba, U039a, U043a, U041a] };
     key <AB02> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ x,   X, x,   X, U03be, U039e, U0449, U0429] };
+                symbols[group1]=[ x, X, x,     X,     U03be, U039e, U0449, U0429] };
     key <AB05> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ b,   B, b,   B, U03b2, U0392, U0431, U0411] };
+                symbols[group1]=[ b, B, b,     B,     U03b2, U0392, U0431, U0411] };
     key <AB07> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ m,   M, m,   M, U03bc, U039c, U043c, U041c] };
+                symbols[group1]=[ m, M, m,     M,     U03bc, U039c, U043c, U041c] };
     key <AD02> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ w,   W, w,   W, U03c9, U03a9, U0448, U0428] };
+                symbols[group1]=[ w, W, w,     W,     U03c9, U03a9, U0448, U0428] };
     key <AB04> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ v,   V, v,   V, U03c2, dead_greek, U0432, U0412] };
+                symbols[group1]=[ v, V, v, V, U03c2, dead_greek, U0432, U0412]};
     key <AB01> { type[group1]="EIGHT_LEVEL_ALPHABETIC",
-		symbols[group1]=[ z,   Z, z,   Z, U03b6, U0396, U0437, U0417] };
+                symbols[group1]=[ z, Z, z,     Z,     U03b6, U0396, U0437, U0417] };
 
-    // * SPACEBAR + MODIFIERS (+ DELETE) *
+// -------------------------------------------------------------------------- //
 
-    key <LFSH> { type[group1]="EIGHT_LEVEL", 
-               symbols[group1]=[ Shift_L, Caps_Lock, Shift_L, Shift_L, Shift_L, Shift_L, Shift_L, Shift_Lock ],  
-               repeat[group1]=no,
-    	actions [Group1] = [
-	    SetMods(modifiers=Shift),
-	    SetMods(modifiers=Shift+Lock,clearLocks)
-	] };
-    key <LSGT>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ ISO_Level5_Shift ],  repeat=no };
+    // * SPACEBAR + MODIFIERS (+ DELETE RIGHT) *
+
+    // Shift;
+    // hold one, then strike other for Caps Lock;
+    // Meta + Shift for Shift Lock
+    // * Not working — getting Sh+Sh ⇒ Shift Lock. Oh, well.
+    key <LFSH> { type[group1]="EIGHT_LEVEL",
+                 symbols[group1]=[ Shift_L, Caps_Lock, Shift_L, Shift_L,
+                                   Shift_L, Shift_L, Shift_L, Shift_Lock ],
+                 repeat[group1]=no };
+    key <RTSH> { type[group1]="EIGHT_LEVEL",
+                 symbols[group1]=[ Shift_R, Caps_Lock, Shift_R, Shift_R,
+                                   Shift_R, Shift_R, Shift_R, Shift_Lock ],
+                 repeat=no };
+
+    // Greek key (ISO Level 5) = labeled as “Any” on my keyboard, to be funny.
+    // (“any other alphabet”)
+    // Lock into Greek mode with Control; lock AltGr with Meta
+    key <LSGT>  { type[group1]="BASE_SH_CTRL_META",
+                  symbols[group1]=[ ISO_Level5_Shift, ISO_Level5_Shift,
+                                    ISO_Level5_Lock, ISO_Level3_Lock ],
+                  repeat=no// ,
+                  //actions[group1] = [ SetMods(modifiers=LevelFive),
+                  //                    SetMods(modifiers=LevelFive),
+                  //                    LockMods(modifiers=LevelFive),
+                  //                    LockMods(modifiers=LevelThree) ]
+                  };
 
     key <LCTL> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Control_L ],        repeat=no };
+                 symbols[group1]=[ Control_L ],
+                // action = SetMods(modifiers=Control,clearLocks),
+                 repeat=no };
+    key <MENU> { type[group1]="ONE_LEVEL",
+                 symbols[group1]=[ Control_R ],
+                 repeat=no };
+
+    // AltGr (ISO Level 3; “Alternate Graphic” — AltGr punctuation shown on
+    // right side of key caps in navy blue; “hidden” on letter keys
     key <LWIN> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ ISO_Level3_Shift ],
-                                       repeat=no }; // AltGr
+                symbols[group1]=[ ISO_Level3_Shift ],
+                 repeat=no };
+
     key <LALT> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Meta_L ],           repeat=no };
+               symbols[group1]=[ Meta_L ],
+               repeat=no };
 
     key <SPCE> { type[group1]="EIGHT_LEVEL",
-		symbols[group1]=[ space, space, nobreakspace, nobreakspace, 
-                                  space, space,  nobreakspace, nobreakspace ]};
+               symbols[group1]=[ space, space, nobreakspace, nobreakspace,
+                                   space, space, nobreakspace, nobreakspace ]};
 
     key <RALT> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Meta_R ], 
-                repeat=no, 
-                      	actions [Group1] = [
-	    SetMods(modifiers=Shift),
-	    SetMods(modifiers=Shift+Lock,clearLocks)
-	] };
+                 symbols[group1]=[ Meta_R ],
+                 repeat=no };
     key <RWIN> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Multi_key ],        repeat=no }; // Compose
-    key <MENU> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Control_R ],       repeat=no };
+                 symbols[group1]=[ Multi_key ], repeat=no }; // Compose
 
     key <RCTL> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Delete ]};
+                  symbols[group1]=[ Delete ], repeat=yes};
 
-    key <RTSH> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Shift_R, Caps_Lock, Shift_R, Shift_R, Shift_R, Shift_R, Shift_R, Shift_Lock ],         repeat=no };
-
+    // Why is this here? If “Alt” isn't bound, Firefox (and who else…?)
+    // won't be able to figure out which key is Meta, and won't treat it as
+    // Alt.
     key <AE40> { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Alt_L ]}; // non-existent key to bind modifier
+                symbols[group1]=[ Alt_L ]}; // non-existent key to bind modifier
+
+// -------------------------------------------------------------------------- //
 
 
     // Navigation Section
@@ -267,28 +390,31 @@ xkb_symbols "spacey" {
     // Six navigation keys
 
     key <INS>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Home ]};
+                symbols[group1]=[ Home ]};
     key <HOME>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ End ]};
+                symbols[group1]=[ End ]};
     key <PGUP>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Prior ]};
+                symbols[group1]=[ Prior ]};
     key <DELE>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Hyper_R ], repeat=no  };
+                symbols[group1]=[ Hyper_R ], repeat=no };
     key <END>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Insert ]};
+                symbols[group1]=[ Insert ]};
     key <PGDN>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Next ]};
+                symbols[group1]=[ Next ]};
 
     // Cursor keys “Inverted-T” cluster
 
     key <UP>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Up ]};
+                symbols[group1]=[ Up ]};
     key <LEFT>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Left ]};
+                symbols[group1]=[ Left ]};
     key <DOWN>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Down ]};
+                symbols[group1]=[ Down ]};
     key <RGHT>  { type[group1]="ONE_LEVEL",
-		symbols[group1]=[ Right ]};
+                symbols[group1]=[ Right ]};
+
+// -------------------------------------------------------------------------- //
+
 
     // Numeric Keypad
     // ==============
@@ -298,52 +424,55 @@ xkb_symbols "spacey" {
     // Clear, Delete, ␢ ␣
     key <NMLK> { type[group1]="FOUR_LEVEL",
                   symbols[group1]=[ Clear,       KP_Delete,   U2422,  U2423 ]};
-    //    / ÷ λ ∕ (last sym = fraction slash)
+    //    / ÷ λ ∕ (slash, divide, lambda, fraction slash)
     key <KPDV> { type[group1]="FOUR_LEVEL",
                   symbols[group1]=[ KP_Divide,   U00f7,  U03bb, U2044 ]};
-    //    * × ° ⋅                              
+    //    * × ° ⋅ (asterisk, times x, degree, times dot)
     key <KPMU> { type[group1]="FOUR_LEVEL",
                   symbols[group1]=[ KP_Multiply, U00d7, U00b0,  U22c5 ]};
     //    - ¯ ‐ – (minus, macron, hyphen, en dash)
     key <KPSU> { type[group1]="FOUR_LEVEL",
                   symbols[group1]=[ KP_Subtract, U00AF, U2010,  endash ]};
-    //    + = ℵ •
+    //    + = ℵ (Alef)  • (bullet)
     key <KPAD> { type[group1]="FOUR_LEVEL",
                   symbols[group1]=[ KP_Add,      KP_Equal,    U2135,   U2022 ]};
+
     key <KPEN> { type[group1]="ONE_LEVEL", symbols[group1]=[ KP_Enter ]};
 
     // numeric keypad; AltGr for arrows or fat arrows
 
     key <KP7>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_7,   KP_7, U2196, U21D6 ]}; //  7 ↖ ⇖
+                symbols[group1]=[  KP_7,   KP_7, U2196, U21D6 ]}; //  7 ↖ ⇖
     key <KP8>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_8,   KP_8, U2191, U21D1 ]}; //  8 ↑ ⇑
+                symbols[group1]=[  KP_8,   KP_8, U2191, U21D1 ]}; //  8 ↑ ⇑
     key <KP9>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_9,   KP_9, U2197, U21D7 ]}; //  9 ↗ ⇗
- 
+                symbols[group1]=[  KP_9,   KP_9, U2197, U21D7 ]}; //  9 ↗ ⇗
+
     key <KP4>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_4,   KP_4, U2190, U21D0 ]}; //  4 ← ⇐
+                symbols[group1]=[  KP_4,   KP_4, U2190, U21D0 ]}; //  4 ← ⇐
     key <KP5>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_5,   KP_5, U2194, U21D4 ]}; //  5 ↔ ⇔
+                symbols[group1]=[  KP_5,   KP_5, U2194, U21D4 ]}; //  5 ↔ ⇔
     key <KP6>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_6,   KP_6, U2192, U21D2 ]}; //  6 → ⇒
+                symbols[group1]=[  KP_6,   KP_6, U2192, U21D2 ]}; //  6 → ⇒
 
     key <KP1>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_1,   KP_1, U2199, U21D9 ]}; //  1 ↙ ⇙
+                symbols[group1]=[  KP_1,   KP_1, U2199, U21D9 ]}; //  1 ↙ ⇙
     key <KP2>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_2,   KP_2, U2193, U21D3 ]}; //  2 ↓ ⇓
+               symbols[group1]=[  KP_2,   KP_2, U2193, U21D3 ]}; //  2 ↓ ⇓
     key <KP3>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_3,   KP_3, U2198, U21D8 ]}; //  3 ↘ ⇘
+               symbols[group1]=[  KP_3,   KP_3, U2198, U21D8 ]}; //  3 ↘ ⇘
 
     key <KP0>  { type[group1]="FOUR_LEVEL",
-		symbols[group1]=[  KP_0,   KP_0, U2195, U21D5 ]}; //  0 ↕ ⇕
+               symbols[group1]=[  KP_0,   KP_0, U2195, U21D5 ]}; //  0 ↕ ⇕
 
-    key <KPDL> { type[group1]="BASE_SHIFT", symbols[group1]=[  KP_Decimal, KP_Separator ]};
+    key <KPDL> { type[group1]="BASE_SHIFT",
+                 symbols[group1]=[  KP_Decimal, KP_Separator ]};
 
     // End "Keypad" section
 
+// -------------------------------------------------------------------------- //
 
-
+    //clear_modifier_map;
 
     modifier_map Control { <LCTL> }; // Control L
     modifier_map Control { <RWIN> }; // Control R
@@ -353,17 +482,15 @@ xkb_symbols "spacey" {
 
     modifier_map Mod1 { <LALT> }; // Meta L
     modifier_map Mod1 { <RALT> }; // Meta R
-
-    modifier_map Mod1 { <AE40> }; // Fake Alt key
-
     // Some funky clients try to guess which mod bits represent “Alt”
     // by looking for the binding to a key with the Alt_L symbol, so
     // this allows those clients to determine that the Mod1 bit
-    // represents Alt. I vaguely suspect Firefox of being such a
-    // problem child.
+    // represents Alt. It appears (at least) Firefox is such a “problem child.”
+    modifier_map Mod1 { <AE40> }; // Fake Alt key
 
-//    modifier_map Mod2 { <LWIN> }; // AltGr (Level 3 Shift)
-    modifier_map Mod2 { <RWIN> }; // Compose
+ // modifier_map Mod2 { <LWIN> }; // AltGr (Level 3 Shift)
+ // modifier_map Mod2 { <RWIN> }; // Compose
+    modifier_map Mod2 { <LTGT> }; // Greek
     modifier_map Mod3 { <ESC> }; // Super
     modifier_map Mod4 { <DELE> }; // Hyper
 };
