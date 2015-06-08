@@ -1,8 +1,10 @@
 #!/bin/sh
-cp dot-config∕gtk-3.0∕gtk.css ~/.config/gtk-3.0/gtk.css
-cp dot-gtkrc-2.0 ~/.gtkrc-2.0
-cp ∕lib∕kbd∕keymaps∕legacy∕i386∕spacey.map /lib/kbd/keymaps/legacy/i386/spacey.map
-cp ∕usr∕share∕X11∕locale∕en_US.UTF-8∕Compose /usr/share/X11/locale/en_US.UTF-8/Compose
-cp ∕usr∕share∕X11∕xkb∕compat∕spacey /usr/share/X11/xkb/compat/spacey
-cp ∕usr∕share∕X11∕xkb∕symbols∕spacey /usr/share/X11/xkb/symbols/spacey
-cat ⁄usr⁄share⁄X11⁄xkb⁄rules⁄evdev.patch | (cd /usr/share/X11/xkb/rules; patch -)
+cd "$(dirname "$0")"
+cp -v dot-config∕gtk-3.0∕gtk.css ~/.config/gtk-3.0/gtk.css
+cp -v dot-gtkrc-2.0 ~/.gtkrc-2.0
+sudo cp -v ∕lib∕kbd∕keymaps∕legacy∕i386∕spacey.map /lib/kbd/keymaps/legacy/i386/spacey.map
+sudo cp -v ∕usr∕share∕X11∕locale∕en_US.UTF-8∕Compose /usr/share/X11/locale/en_US.UTF-8/Compose
+sudo cp -v ∕usr∕share∕X11∕xkb∕compat∕spacey /usr/share/X11/xkb/compat/spacey
+sudo cp -v ∕usr∕share∕X11∕xkb∕symbols∕spacey /usr/share/X11/xkb/symbols/spacey
+sudo sh -c "cd /usr/share/X11/xkb/rules; patch < $(pwd)/⁄usr⁄share⁄X11⁄xkb⁄rules⁄evdev.patch"
+
