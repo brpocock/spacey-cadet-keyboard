@@ -378,7 +378,7 @@ xkb_symbols "spacey" {
     // Why is this here? If “Alt” isn't bound, Firefox (and who else…?)
     // won't be able to figure out which key is Meta, and won't treat it as
     // Alt.
-    key <AE40> { type[group1]="ONE_LEVEL",
+    key <ALT>  { type[group1]="ONE_LEVEL",
                 symbols[group1]=[ Alt_L ]}; // non-existent key to bind modifier
 
 // -------------------------------------------------------------------------- //
@@ -469,6 +469,14 @@ xkb_symbols "spacey" {
                  symbols[group1]=[  KP_Decimal, KP_Separator ]};
 
     // End "Keypad" section
+
+    // Squelch some non-existent keys defined by the default layouts
+    key <SUPR> { type[group1]="ONE_LEVEL",
+                 symbols[group1]=[ Super_R ] };
+    key <META> { type[group1]="ONE_LEVEL",
+                 symbols[group1]=[ U00bf ] };
+    key <HYPR> { type[group1]="ONE_LEVEL",
+                 symbols[group1]=[ Hyper_R ] };
 
 // -------------------------------------------------------------------------- //
 
