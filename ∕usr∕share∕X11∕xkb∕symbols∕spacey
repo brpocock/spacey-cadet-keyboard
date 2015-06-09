@@ -474,24 +474,16 @@ xkb_symbols "spacey" {
 
     //clear_modifier_map;
 
-    modifier_map Control { <LCTL> }; // Control L
-    modifier_map Control { <RWIN> }; // Control R
+    modifier_map Control { Control_L, Control_R }; 
 
-    modifier_map Shift { <LFSH> }; // Shift L
-    modifier_map Shift { <RTSH> }; // Shift R
+    modifier_map Shift { Shift_L, Shift_R }; 
+    modifier_map Lock { Caps_Lock };
 
-    modifier_map Mod1 { <LALT> }; // Meta L
-    modifier_map Mod1 { <RALT> }; // Meta R
-    // Some funky clients try to guess which mod bits represent “Alt”
-    // by looking for the binding to a key with the Alt_L symbol, so
-    // this allows those clients to determine that the Mod1 bit
-    // represents Alt. It appears (at least) Firefox is such a “problem child.”
-    modifier_map Mod1 { <AE40> }; // Fake Alt key
-
- // modifier_map Mod2 { <LWIN> }; // AltGr (Level 3 Shift)
- // modifier_map Mod2 { <RWIN> }; // Compose
-    modifier_map Mod2 { <LTGT> }; // Greek
-    modifier_map Mod3 { <ESC> }; // Super
-    modifier_map Mod4 { <DELE> }; // Hyper
+    modifier_map Mod1 { Meta_L, Alt_L, Meta_R, Alt_R };
+    modifier_map Mod2 { ISO_Level5_Shift };
+    modifier_map Mod3 { Super_L, Super_R };
+    modifier_map Mod4 { Hyper_L, Hyper_R };
+    modifier_map Mod5 { ISO_Level3_Shift, Mode_switch };
+    
 };
 
