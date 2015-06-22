@@ -4,7 +4,8 @@ cp -v dot-config∕gtk-3.0∕gtk.css ~/.config/gtk-3.0/gtk.css
 cp -v dot-gtkrc-2.0 ~/.gtkrc-2.0
 sudo cp -v ∕lib∕kbd∕keymaps∕legacy∕i386∕spacey.map /lib/kbd/keymaps/legacy/i386/spacey.map
 sudo cp -v ∕usr∕share∕X11∕locale∕en_US.UTF-8∕Compose /usr/share/X11/locale/en_US.UTF-8/Compose
-sudo cp -v ∕usr∕share∕X11∕xkb∕compat∕spacey /usr/share/X11/xkb/compat/spacey
-sudo cp -v ∕usr∕share∕X11∕xkb∕symbols∕spacey /usr/share/X11/xkb/symbols/spacey
-sudo sh -c "cd /usr/share/X11/xkb/rules; patch < $(pwd)/⁄usr⁄share⁄X11⁄xkb⁄rules⁄evdev.patch"
+sudo cp -v compat /usr/share/X11/xkb/compat/spacey
+sudo cp -v symbols /usr/share/X11/xkb/symbols/spacey
+sudo cp -v types /usr/share/X11/xkb/types/spacey
+sudo sh -c "cd /usr/share/X11/xkb/rules; patch < $(pwd)/evdev.xml.patch"
 
