@@ -1,0 +1,19 @@
+--- evdev.orig	2015-06-22 13:11:29.187112527 -0400
++++ evdev	2015-06-22 13:13:31.730471179 -0400
+@@ -893,11 +893,16 @@
+   *		jp		=	complete+japan
+   olpc          *               =       olpc
+   olpcm         *               =       olpc
++  *             spacey          =       spacey
+   *		*		=	complete
+ 
+ ! model		layout[1]	=	compat
++  *		spacey		=	spacey
+   *		*		=	complete
+ 
++! model		layout		=	types
++  *             spacey          =       complete+spacey
++
+ ! model		=	types
+   $macs		=	complete+numpad(mac)
+   $applealu	=	complete+numpad(mac)

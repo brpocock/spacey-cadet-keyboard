@@ -97,47 +97,47 @@ xkb_symbols "spacey" {
 
 
     key <ESC>  {
-      type[group1]="ONE_LEVEL", symbols[group1]=[ Super_L ], repeat=no
+      type[group1]="ONE_LEVEL", symbols[group1]=[ Super_L ], repeat[group1]=no
     };
 
-    key <FK01>  { type[group1]="CTRL+ALT",
-                  symbols[group1]=[ Help,        osfHelp,    F1, F13, XF86Switch_VT_1 ]};
-    key <FK02>  { type[group1]="CTRL+ALT",
+    key <FK01>  { type[group1]="CTRL+META" };
+    key <FK01>  { symbols[group1]=[ Help,        osfHelp,    F1, F13, XF86Switch_VT_1 ]};
+    key <FK02>  { type[group1]="CTRL+META",
                   symbols[group1]=[ SunProps,    XF86Option, F2, F14, XF86Switch_VT_2 ]};
-    key <FK03>  { type[group1]="CTRL+ALT",
+    key <FK03>  { type[group1]="CTRL+META",
                   symbols[group1]=[ XF86Back,    SunUndo,    F3, F15, XF86Switch_VT_3 ]};
-    key <FK04>  { type[group1]="CTRL+ALT",
+    key <FK04>  { type[group1]="CTRL+META",
                   symbols[group1]=[ XF86History, SunPaste,   F4, F16, XF86Switch_VT_4 ]};
 
 
-    key <FK05>  { type[group1]="CTRL+ALT",
+    key <FK05>  { type[group1]="CTRL+META",
                   symbols[group1]=[ XF86New,  SunCut,        F5, F17, XF86Switch_VT_5 ]};
-    key <FK06>  { type[group1]="CTRL+ALT",
+    key <FK06>  { type[group1]="CTRL+META",
                   symbols[group1]=[ XF86View, SunCopy,       F6, F18, XF86Switch_VT_6 ]};
-    key <FK07>  { type[group1]="CTRL+ALT",
+    key <FK07>  { type[group1]="CTRL+META",
                   symbols[group1]=[ Execute,  XF86LightBulb, F7, F19, XF86Switch_VT_7 ]};
-    key <FK08>  { type[group1]="CTRL+ALT",
+    key <FK08>  { type[group1]="CTRL+META",
                   symbols[group1]=[ XF86Send, XF86Tools,     F8, F20, XF86Switch_VT_8 ]};
 
 
-    key <FK09>  { type[group1]="CTRL+ALT",
+    key <FK09>  { type[group1]="CTRL+META",
                   symbols[group1]=[ Print,      XF86Video,   F9,  F21, XF86Switch_VT_9 ]};
-    key <FK10>  { type[group1]="CTRL+ALT",
+    key <FK10>  { type[group1]="CTRL+META",
                   symbols[group1]=[ Menu,       XF86MenuKB,  F10, F22, XF86Switch_VT_10 ]};
-    key <FK11>  { type[group1]="CTRL+ALT",
+    key <FK11>  { type[group1]="CTRL+META",
                   symbols[group1]=[ XF86ZoomIn, XF86ZoomOut, F11, F23, XF86Switch_VT_11 ]};
 
 
 // -------------------------------------------------------------------------- //
 
 
-    key <FK12>  { type[group1]="CTRL+ALT",
+    key <FK12>  { type[group1]="CTRL+META",
                   symbols[group1]=[ XF86ScreenSaver, XF86Away, F12, F24, XF86Switch_VT_12 ]};
 
     key <PRSC>  { type[group1]="BASE_SH_CTRL_META",
                   symbols[group1]=[ XF86AudioPlay, XF86AudioPause,
                                     XF86AudioPrev, XF86AudioNext   ]};
-    key <SCLK>  { type[group1]="CTRL+ALT",
+    key <SCLK>  { type[group1]="CTRL+META",
                   symbols[group1]=[ Sys_Req, Sys_Req, Sys_Req, Sys_Req, Terminate_Server ]};
     key <PAUS>  { type[group1]="BASE_SH_CTRL_META",
                   symbols[group1]=[ XF86AudioMute, XF86AudioMute,
@@ -257,7 +257,7 @@ xkb_symbols "spacey" {
 
     // * AE028 ROW * (Delete → Return)
 
-    key <CAPS> { type[group1]="ONE_LEVEL", symbols[group1]=[ BackSpace ], repeat=yes};
+    key <CAPS> { type[group1]="ONE_LEVEL", symbols[group1]=[ BackSpace ], repeat[group1]=yes};
 
     //                            ∅  Sh AG     Sh+AG  Gr     Gr+Sh  AG+Gr  Sh+AG+Gr
     //                            Latin AltGr         Greek         Cyrillic
@@ -337,7 +337,7 @@ xkb_symbols "spacey" {
     key <LSGT>  { type[group1]="BASE_SH_CTRL_META",
                   symbols[group1]=[ ISO_Level5_Shift, ISO_Level5_Shift,
                                     ISO_Level5_Lock, ISO_Level3_Lock ],
-                  repeat=no// ,
+                  repeat[group1]=no// ,
                   //actions[group1] = [ SetMods(modifiers=LevelFive),
                   //                    SetMods(modifiers=LevelFive),
                   //                    LockMods(modifiers=LevelFive),
@@ -478,19 +478,43 @@ xkb_symbols "spacey" {
     key <HYPR> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Hyper_R ] };
 
+   // non-existent keys to quash warnings
+   key <AB11> { symbols=[ questiondown ] };
+   key <JPCM>  { symbols=[ questiondown ] };
+   key <I120>  { symbols=[ questiondown ] };
+   key <AE13>  { symbols=[ questiondown ] };
+   key <I149>  { symbols=[ questiondown ] };
+   key <I154>  { symbols=[ questiondown ] };
+   key <I168>  { symbols=[ questiondown ] };
+   key <I178>  { symbols=[ questiondown ] };
+   key <I183>  { symbols=[ questiondown ] };
+   key <I184>  { symbols=[ questiondown ] };
+   key <FK19>  { symbols=[ questiondown ] };
+   key <FK24>  { symbols=[ questiondown ] };
+   key <I217>  { symbols=[ questiondown ] };
+   key <I219>  { symbols=[ questiondown ] };
+   key <I221>  { symbols=[ questiondown ] };
+   key <I222>  { symbols=[ questiondown ] };
+   key <I230>  { symbols=[ questiondown ] };
+   key <I247>  { symbols=[ questiondown ] };
+   key <I248>  { symbols=[ questiondown ] };
+   key <I249>  { symbols=[ questiondown ] };
+   key <I250>  { symbols=[ questiondown ] };
+   key <I251>  { symbols=[ questiondown ] };
+   key <I252>  { symbols=[ questiondown ] };
+   key <I253>  { symbols=[ questiondown ] };
+
 // -------------------------------------------------------------------------- //
 
     //clear_modifier_map;
 
-    modifier_map Control { Control_L, Control_R }; 
-
     modifier_map Shift { Shift_L, Shift_R }; 
     modifier_map Lock { Caps_Lock };
-
-    modifier_map Mod1 { Meta_L, Alt_L, Meta_R, Alt_R };
+    modifier_map Control { Control_L, Control_R }; 
+    modifier_map Mod1 { Meta_L, Meta_R, Alt_L };
     modifier_map Mod2 { ISO_Level5_Shift };
-    modifier_map Mod3 { Super_L, Super_R };
-    modifier_map Mod4 { Hyper_L, Hyper_R };
+    modifier_map Mod3 { Hyper_R };
+    modifier_map Mod4 { Super_L, Super_R };
     modifier_map Mod5 { ISO_Level3_Shift, Mode_switch };
     
 };
