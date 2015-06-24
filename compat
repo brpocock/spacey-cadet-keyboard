@@ -6,99 +6,101 @@
 
 xkb_compatibility "spacey" {
 
-    virtual_modifiers NumLock,Alt,LevelThree,LAlt,RAlt,RControl,LControl,ScrollLock,LevelFive,Shift,Control,Meta,AltGr,Super,Hyper,Lock;
+    virtual_modifiers RControl,LControl,Shift,Lock,Control,AltGr,LevelFive,Meta,Super,Hyper;
 
     interpret.useModMapMods= AnyLevel;
     interpret.repeat= False;
     interpret.locking= False;
-    interpret Shift_L+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Shift,clearLocks);
-    };
-    interpret Shift_R+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Shift,clearLocks);
-    };
-    interpret Control_L+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Control,clearLocks);
-    };
-    interpret Control_R+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Control,clearLocks);
-    };
-    interpret Meta_L+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Alt+Meta,clearLocks);
-    };
-    interpret Meta_R+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Alt+Meta,clearLocks);
-    };
-    interpret Super_L+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Super,clearLocks);
-    };
-    interpret Hyper_R+AnyOfOrNone(all) {
-        action= SetMods(modifiers=Hyper,clearLocks);
-    };
-    interpret ISO_Level3_Shift+AnyOfOrNone(all) {
-        action= SetMods(modifiers=LevelThree,clearLocks);
-    };
-    interpret ISO_Level5_Shift+AnyOfOrNone(all) {
-        action= SetMods(modifiers=LevelFive,clearLocks);
-    };
-    interpret Shift_Lock+AnyOfOrNone(all) {
-        action= LockMods(modifiers=Shift);
-    };
-    interpret Caps_Lock+AnyOfOrNone(all) {
-        action= LockMods(modifiers=Lock);
-    };
-    interpret ISO_Level5_Lock+AnyOfOrNone(all) {
-        action= LockMods(modifiers=LevelFive);
-    };
-    interpret ISO_Level3_Lock+AnyOfOrNone(all) {
-        action= LockMods(modifiers=LevelThree+LevelFive);
-    };
-    // virtual_modifiers Shift,Control,Alt,Meta,AltGr,LevelThree,LevelFive,Super,Hyper,Lock;
 
-    // interpret.useModMapMods = AnyLevel;
-    // interpret.repeat = False;
-    // interpret.locking = False;
+   //  // Shift (and Caps Lock)
+   //  interpret Shift_L+AnyOfOrNone(all) {
+   //      action= SetMods(modifiers=Shift,clearLocks);
+   //  };
+   //  interpret Shift_R+AnyOfOrNone(all) {
+   //      action= SetMods(modifiers=Shift,clearLocks);
+   //  };
+   //  interpret Shift_Lock+AnyOfOrNone(all) {
+   //      action= LockMods(modifiers=Shift);
+   //  };
+   //  interpret Caps_Lock+AnyOfOrNone(all) {
+   //      action= LockMods(modifiers=Lock);
+   //  };
 
-    // interpret Shift_L { action = SetMods(modifiers=Shift,clearLocks); };
-    // interpret Shift_R { action = SetMods(modifiers=Shift,clearLocks); };
+   //  // AltGr
+   //  interpret ISO_Level3_Shift+AnyOf(all) {
+   //      virtualModifier= AltGr;
+   //      useModMapMods=level1;
+   //      action= SetMods(modifiers=AltGr,clearLocks);
+   //  };
+   //  interpret ISO_Level3_Latch+AnyOf(all) {
+   //      virtualModifier= AltGr;
+   //      useModMapMods=level1;
+   //      action= LatchMods(modifiers=AltGr,clearLocks,latchToLock);
+   //  };
+   //  interpret ISO_Level3_Lock+AnyOf(all) {
+   //      virtualModifier= AltGr;
+   //      useModMapMods=level1;
+   //      action= LockMods(modifiers=AltGr);
+   //  };
 
-    // interpret Control_L { action = SetMods(modifiers=Control,clearLocks); };
-    // interpret Control_R { action = SetMods(modifiers=Control,clearLocks); };
+   //  // Greek
+   //  interpret ISO_Level5_Shift+AnyOfOrNone(all) {
+   //      action= SetMods(modifiers=LevelFive,clearLocks);
+   //  };
+   //  interpret ISO_Level5_Lock+AnyOfOrNone(all) {
+   //      action= LockMods(modifiers=LevelFive);
+   //  };
+   //  // interpret ISO_Level3_Lock+AnyOfOrNone(all) {
+   //  //     action= LockMods(modifiers=LevelThree+LevelFive);
+   //  // };
 
-    // interpret Meta_L { action = SetMods(modifiers=Alt+Meta,clearLocks); };
-    // interpret Meta_R { action = SetMods(modifiers=Alt+Meta,clearLocks); };
 
-    // interpret Super_L { action = SetMods(modifiers=Super,clearLocks); };
+   //  // Control
+   //  interpret Control_L+AnyOfOrNone(all) {
+   //      action= SetMods(modifiers=Control,clearLocks);
+   //  };
+   //  interpret Control_R+AnyOfOrNone(all) {
+   //      action= SetMods(modifiers=Control,clearLocks);
+   //  };
 
-    // interpret Hyper_R { action = SetMods(modifiers=Hyper,clearLocks); };
+   //  // Meta
+   //  interpret Meta_L+AnyOfOrNone(all) {
+   //      // virtualModifier = Alt+Meta;
+   //      action= SetMods(modifiers=modMapMods,clearLocks);
+   //  };
+   //  interpret Meta_R+AnyOfOrNone(all) {
+   //       // virtualModifier = Alt+Meta;
+   //       action= SetMods(modifiers=modMapMods,clearLocks);
+   //  };
 
-    // interpret ISO_Level3_Shift
-    //                       { action= SetMods(modifiers=LevelThree,clearLocks); };
-    // interpret ISO_Level5_Shift
-    //                       { action = SetMods(modifiers=LevelFive,clearLocks); };
+   //  // Super
+   //  interpret Super_L+AnyOfOrNone(all) {
+   //      virtualModifier= Super;
+   //      action= SetMods(modifiers=Super,clearLocks);
+   //  };
 
-    // interpret Shift_Lock { action = LockMods(modifiers=Shift); };
-    // interpret Caps_Lock { action = LockMods(modifiers=Lock); };
-    // interpret ISO_Level5_Lock { action = LockMods(modifiers=LevelFive); };
-    // interpret ISO_Level3_Lock
-    //                      { action = LockMods(modifiers=LevelThree+LevelFive); };
+   //  // Hyper
+   //  interpret Hyper_R+AnyOf(all) {
+   //      virtualModifier= Hyper;
+   //      action= SetMods(modifiers=modMapMods,clearLocks);
+   //  };
 
-    // group2 = AltGr;
-    // group3 = LevelFive;
-    // group4 = AltGr+LevelFive;
+   //  // group2 = AltGr;
+   //  // group3 = LevelFive;
+   //  // group4 = AltGr+LevelFive;
 
-    // indicator "Caps Lock" {
-    //     !allowExplicit;
-    //     whichModState= locked;
-    //     modifiers= Lock;
-    // };
-//    indicator "Group 2" {
-//        !allowExplicit;
-//        groups= 0xfe;
-//    };
-//    indicator "Mouse Keys" {
-//        indicatorDrivesKeyboard;
-//        controls= mouseKeys;
-//    };
+   //  indicator "Caps Lock" {
+   //      !allowExplicit;
+   //      whichModState= locked;
+   //      modifiers= Lock;
+   //  };
+   // indicator "Group 2" {
+   //     !allowExplicit;
+   //     groups= 0xfe;
+   // };
+   // indicator "Mouse Keys" {
+   //     indicatorDrivesKeyboard;
+   //     controls= mouseKeys;
+   // };
 
 };

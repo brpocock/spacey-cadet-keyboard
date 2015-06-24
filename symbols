@@ -257,7 +257,9 @@ xkb_symbols "spacey" {
 
     // * AE028 ROW * (Delete → Return)
 
-    key <CAPS> { type[group1]="ONE_LEVEL", symbols[group1]=[ BackSpace ], repeat[group1]=yes};
+    key <CAPS> { type[group1]="ONE_LEVEL",
+                 repeat[group1]=yes,
+                 symbols[group1]=[ BackSpace ] };
 
     //                            ∅  Sh AG     Sh+AG  Gr     Gr+Sh  AG+Gr  Sh+AG+Gr
     //                            Latin AltGr         Greek         Cyrillic
@@ -325,11 +327,19 @@ xkb_symbols "spacey" {
     key <LFSH> { type[group1]="EIGHT_LEVEL",
                  symbols[group1]=[ Shift_L, Caps_Lock, Shift_L, Shift_L,
                                    Shift_L, Shift_L, Shift_L, Shift_Lock ],
-                 repeat[group1]=no };
+                  actions [Group1] = [
+	    SetMods(modifiers=Shift),
+	    SetMods(modifiers=Shift+Lock,clearLocks)
+	],
+        repeat[group1]=no };
     key <RTSH> { type[group1]="EIGHT_LEVEL",
                  symbols[group1]=[ Shift_R, Caps_Lock, Shift_R, Shift_R,
                                    Shift_R, Shift_R, Shift_R, Shift_Lock ],
-                 repeat=no };
+    	         actions [Group1] = [
+	    SetMods(modifiers=Shift),
+	    SetMods(modifiers=Shift+Lock,clearLocks)
+	],
+                 repeat[group1]=no };
 
     // Greek key (ISO Level 5) = labeled as “Any” on my keyboard, to be funny.
     // (“any other alphabet”)
@@ -347,20 +357,22 @@ xkb_symbols "spacey" {
     key <LCTL> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Control_L ],
                 // action = SetMods(modifiers=Control,clearLocks),
-                 repeat=no };
+                 repeat[group1]=no };
     key <MENU> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Control_R ],
-                 repeat=no };
+                 repeat[group1]=no };
 
     // AltGr (ISO Level 3; “Alternate Graphic” — AltGr punctuation shown on
     // right side of key caps in navy blue; “hidden” on letter keys
     key <LWIN> { type[group1]="ONE_LEVEL",
                 symbols[group1]=[ ISO_Level3_Shift ],
-                 repeat=no };
+                 repeat[group1]=no };
 
     key <LALT> { type[group1]="ONE_LEVEL",
                symbols[group1]=[ Meta_L ],
-               repeat=no };
+               actions [Group1] = [
+	    SetMods(modifiers=Alt,Meta) ],
+               repeat[group1]=no };
 
     key <SPCE> { type[group1]="EIGHT_LEVEL",
                symbols[group1]=[ space, space, nobreakspace, nobreakspace,
@@ -368,17 +380,21 @@ xkb_symbols "spacey" {
 
     key <RALT> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Meta_R ],
-                 repeat=no };
+		actions [Group1] = [
+	    SetMods(modifiers=Alt,Meta) ],
+                 repeat[group1]=no };
     key <RWIN> { type[group1]="ONE_LEVEL",
-                 symbols[group1]=[ Multi_key ], repeat=no }; // Compose
+                 symbols[group1]=[ Multi_key ],
+                 repeat[group1]=no }; // Compose
 
     key <RCTL> { type[group1]="ONE_LEVEL",
-                  symbols[group1]=[ Delete ], repeat=yes};
+                 symbols[group1]=[ Delete ],
+                 repeat[group1]=yes};
 
     // Why is this here? If “Alt” isn't bound, Firefox (and who else…?)
     // won't be able to figure out which key is Meta, and won't treat it as
     // Alt.
-    key <ALT>  { type[group1]="ONE_LEVEL",
+    key <ALT> { type[group1]="ONE_LEVEL",
                 symbols[group1]=[ Alt_L ]}; // non-existent key to bind modifier
 
 // -------------------------------------------------------------------------- //
@@ -465,44 +481,10 @@ xkb_symbols "spacey" {
     key <KP0>  { type[group1]="FOUR_LEVEL",
                symbols[group1]=[  KP_0,   KP_0, U2195, U21D5 ]}; //  0 ↕ ⇕
 
-    key <KPDL> { type[group1]="BASE_SHIFT",
+    key <KPDL> { type[group1]="TWO_LEVEL",
                  symbols[group1]=[  KP_Decimal, KP_Separator ]};
 
     // End "Keypad" section
-
-    // Squelch some non-existent keys defined by the default layouts
-    key <SUPR> { type[group1]="ONE_LEVEL",
-                 symbols[group1]=[ Super_R ] };
-    key <META> { type[group1]="ONE_LEVEL",
-                 symbols[group1]=[ U00bf ] };
-    key <HYPR> { type[group1]="ONE_LEVEL",
-                 symbols[group1]=[ Hyper_R ] };
-
-   // non-existent keys to quash warnings
-   key <AB11> { symbols=[ questiondown ] };
-   key <JPCM>  { symbols=[ questiondown ] };
-   key <I120>  { symbols=[ questiondown ] };
-   key <AE13>  { symbols=[ questiondown ] };
-   key <I149>  { symbols=[ questiondown ] };
-   key <I154>  { symbols=[ questiondown ] };
-   key <I168>  { symbols=[ questiondown ] };
-   key <I178>  { symbols=[ questiondown ] };
-   key <I183>  { symbols=[ questiondown ] };
-   key <I184>  { symbols=[ questiondown ] };
-   key <FK19>  { symbols=[ questiondown ] };
-   key <FK24>  { symbols=[ questiondown ] };
-   key <I217>  { symbols=[ questiondown ] };
-   key <I219>  { symbols=[ questiondown ] };
-   key <I221>  { symbols=[ questiondown ] };
-   key <I222>  { symbols=[ questiondown ] };
-   key <I230>  { symbols=[ questiondown ] };
-   key <I247>  { symbols=[ questiondown ] };
-   key <I248>  { symbols=[ questiondown ] };
-   key <I249>  { symbols=[ questiondown ] };
-   key <I250>  { symbols=[ questiondown ] };
-   key <I251>  { symbols=[ questiondown ] };
-   key <I252>  { symbols=[ questiondown ] };
-   key <I253>  { symbols=[ questiondown ] };
 
 // -------------------------------------------------------------------------- //
 

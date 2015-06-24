@@ -8,7 +8,7 @@
    *		*		=	complete
  
  ! model		layout[1]	=	compat
-+  *		spacey		=	spacey
++  *		spacey		=	complete+spacey
    *		*		=	complete
  
 +! model		layout		=	types
