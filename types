@@ -1,0 +1,29 @@
+xkb_types "spacey" {
+    virtual_modifiers LevelThree,RControl,LControl,Shift,Control,Meta,AltGr;
+
+    type "CTRL+META" {
+        modifiers= Shift+Control+Meta+LevelThree;
+        map[Shift]= Level2;
+        preserve[Shift]= Shift;
+        map[LevelThree]= Level3;
+        map[Shift+LevelThree]= Level4;
+        preserve[Shift+LevelThree]= Shift;
+        map[Control+Meta]= Level5;
+        level_name[Level1]= "Base";
+        level_name[Level2]= "Shift";
+        level_name[Level3]= "AltGr";
+        level_name[Level4]= "Shift AltGr";
+        level_name[Level5]= "Ctrl+Meta";
+    };
+    type "BASE_SH_CTRL_META" {
+        modifiers= Shift+Control+Meta;
+        map[Shift]= Level2;
+        map[Control]= Level3;
+        map[Meta]= Level4;
+        level_name[Level1]= "Base";
+        level_name[Level2]= "Shift";
+        level_name[Level3]= "Control";
+        level_name[Level4]= "Meta";
+    };
+};
+
