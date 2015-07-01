@@ -100,8 +100,8 @@ xkb_symbols "spacey" {
       type[group1]="ONE_LEVEL", symbols[group1]=[ Super_L ], repeat[group1]=no
     };
 
-    key <FK01>  { type[group1]="CTRL+META" };
-    key <FK01>  { symbols[group1]=[ Help,        osfHelp,    F1, F13, XF86Switch_VT_1 ]};
+    key <FK01>  { type[group1]="CTRL+META",
+                  symbols[group1]=[ Help,        osfHelp,    F1, F13, XF86Switch_VT_1 ]};
     key <FK02>  { type[group1]="CTRL+META",
                   symbols[group1]=[ SunProps,    XF86Option, F2, F14, XF86Switch_VT_2 ]};
     key <FK03>  { type[group1]="CTRL+META",
