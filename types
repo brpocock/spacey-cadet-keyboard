@@ -3,12 +3,17 @@ xkb_types "spacey" {
 
     type "CTRL+META" {
         modifiers= Shift+Control+Meta+LevelThree;
+
         map[Shift]= Level2;
         preserve[Shift]= Shift;
+
         map[LevelThree]= Level3;
+
         map[Shift+LevelThree]= Level4;
         preserve[Shift+LevelThree]= Shift;
+
         map[Control+Meta]= Level5;
+
         level_name[Level1]= "Base";
         level_name[Level2]= "Shift";
         level_name[Level3]= "AltGr";
