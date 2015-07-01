@@ -327,18 +327,18 @@ xkb_symbols "spacey" {
     key <LFSH> { type[group1]="EIGHT_LEVEL",
                  symbols[group1]=[ Shift_L, Caps_Lock, Shift_L, Shift_L,
                                    Shift_L, Shift_L, Shift_L, Shift_Lock ],
-                  actions [Group1] = [
-	    SetMods(modifiers=Shift),
-	    SetMods(modifiers=Shift+Lock,clearLocks)
-	],
-        repeat[group1]=no };
+        //           actions [Group1] = [
+	//     SetMods(modifiers=Shift),
+	//     SetMods(modifiers=Shift+Lock,clearLocks)
+	// ],
+                repeat[group1]=no };
     key <RTSH> { type[group1]="EIGHT_LEVEL",
                  symbols[group1]=[ Shift_R, Caps_Lock, Shift_R, Shift_R,
                                    Shift_R, Shift_R, Shift_R, Shift_Lock ],
-    	         actions [Group1] = [
-	    SetMods(modifiers=Shift),
-	    SetMods(modifiers=Shift+Lock,clearLocks)
-	],
+    	//          actions [Group1] = [
+	//     SetMods(modifiers=Shift),
+	//     SetMods(modifiers=Shift+Lock,clearLocks)
+	// ],
                  repeat[group1]=no };
 
     // Greek key (ISO Level 5) = labeled as “Any” on my keyboard, to be funny.
@@ -346,17 +346,16 @@ xkb_symbols "spacey" {
     // Lock into Greek mode with Control; lock AltGr with Meta
     key <LSGT>  { type[group1]="BASE_SH_CTRL_META",
                   symbols[group1]=[ ISO_Level5_Shift, ISO_Level5_Shift,
-                                    ISO_Level5_Lock, ISO_Level3_Lock ],
-                  repeat[group1]=no// ,
+                                    ISO_Level5_Lock, ISO_Level3_Lock ],                  
                   //actions[group1] = [ SetMods(modifiers=LevelFive),
                   //                    SetMods(modifiers=LevelFive),
                   //                    LockMods(modifiers=LevelFive),
-                  //                    LockMods(modifiers=LevelThree) ]
-                  };
+                  //                    LockMods(modifiers=LevelThree) ],
+                  repeat[group1]=no};
 
     key <LCTL> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Control_L ],
-                // action = SetMods(modifiers=Control,clearLocks),
+                // actions[group1] = SetMods(modifiers=Control,clearLocks),
                  repeat[group1]=no };
     key <MENU> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Control_R ],
@@ -370,8 +369,7 @@ xkb_symbols "spacey" {
 
     key <LALT> { type[group1]="ONE_LEVEL",
                symbols[group1]=[ Meta_L ],
-               actions [Group1] = [
-	    SetMods(modifiers=Alt,Meta) ],
+               // actions [Group1] = [ SetMods(modifiers=Alt,Meta) ],
                repeat[group1]=no };
 
     key <SPCE> { type[group1]="EIGHT_LEVEL",
@@ -380,8 +378,8 @@ xkb_symbols "spacey" {
 
     key <RALT> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Meta_R ],
-		actions [Group1] = [
-	    SetMods(modifiers=Alt,Meta) ],
+	    //     actions [Group1] = [
+	    // SetMods(modifiers=Alt,Meta) ],
                  repeat[group1]=no };
     key <RWIN> { type[group1]="ONE_LEVEL",
                  symbols[group1]=[ Multi_key ],
@@ -494,7 +492,7 @@ xkb_symbols "spacey" {
     modifier_map Lock { Caps_Lock };
     modifier_map Control { Control_L, Control_R }; 
     modifier_map Mod1 { Meta_L, Meta_R, Alt_L };
-    modifier_map Mod2 { ISO_Level5_Shift };
+    modifier_map Mod2 { ISO_Level5_Shift }; // else, NumLock
     modifier_map Mod3 { Hyper_R };
     modifier_map Mod4 { Super_L, Super_R };
     modifier_map Mod5 { ISO_Level3_Shift, Mode_switch };
