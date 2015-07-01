@@ -5,12 +5,12 @@ xkb_types "spacey" {
         modifiers= Shift+Control+Meta+LevelThree;
 
         map[Shift]= Level2;
-        preserve[Shift]= Shift;
+#        preserve[Shift]= Shift;
 
         map[LevelThree]= Level3;
 
         map[Shift+LevelThree]= Level4;
-        preserve[Shift+LevelThree]= Shift;
+#        preserve[Shift+LevelThree]= Shift;
 
         map[Control+Meta]= Level5;
 
