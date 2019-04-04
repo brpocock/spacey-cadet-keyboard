@@ -2,11 +2,11 @@
 cd "$(dirname "$0")"
 cp -v dot-config∕gtk-3.0∕gtk.css ~/.config/gtk-3.0/gtk.css
 cp -v dot-gtkrc-2.0 ~/.gtkrc-2.0
-sudo ln -f spacey.map /lib/kbd/keymaps/legacy/i386/spacey.map
-sudo ln -f Compose /usr/share/X11/locale/en_US.UTF-8/Compose
-sudo ln -f compat /usr/share/X11/xkb/compat/spacey
-sudo ln -f symbols /usr/share/X11/xkb/symbols/spacey
-sudo ln -f types /usr/share/X11/xkb/types/spacey
+sudo cp -f spacey.map /lib/kbd/keymaps/legacy/i386/spacey.map
+sudo cp -f Compose /usr/share/X11/locale/en_US.UTF-8/Compose
+sudo cp -f compat /usr/share/X11/xkb/compat/spacey
+sudo cp -f symbols /usr/share/X11/xkb/symbols/spacey
+sudo cp -f types /usr/share/X11/xkb/types/spacey
 sudo sh -c "cd /usr/share/X11/xkb/rules; patch < $(pwd)/evdev.xml.patch"
 sudo sh -c "cd /usr/share/X11/xkb/rules; patch < $(pwd)/evdev.patch"
 
